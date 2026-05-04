@@ -271,6 +271,35 @@ function setupTweaks(){
   window.parent.postMessage({type:'__edit_mode_available'},'*');
 }
 
+/* ── Mobile nav hamburger ── */
+function setupMobileNav(){
+  const btn = document.querySelector('.nav-menu');
+  const links = document.querySelector('.nav-links');
+  if (!btn || !links) return;
+
+  function close() {
+    btn.classList.remove('open');
+    links.classList.remove('mob-open');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', () => {
+    const opening = !links.classList.contains('mob-open');
+    if (opening) {
+      btn.classList.add('open');
+      links.classList.add('mob-open');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    } else {
+      close();
+    }
+  });
+
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+}
+
 /* ── Boot ── */
 renderTimeline();
 renderStrengths();
@@ -281,6 +310,7 @@ setupScrollMotion();
 setupCardGlow();
 setupNav();
 setupProgress();
+setupMobileNav();
 setupTweaks();
 
 document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
@@ -534,4 +564,23 @@ struct TaskRow: View {
       });
     });
   }
+})();
+
+// ── SECTION COLOR TRACKING (scroll-based, reliable override) ──
+(function () {
+  const secs = [...document.querySelectorAll('section[id]')];
+
+  function update() {
+    const mid = window.innerHeight * 0.45;
+    let active = secs[0]?.id ?? 'hero';
+    for (const s of secs) {
+      if (s.getBoundingClientRect().top <= mid) active = s.id;
+    }
+    if (document.body.dataset.section !== active) {
+      document.body.dataset.section = active;
+    }
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update(); // initialize immediately on load
 })();

@@ -6,12 +6,12 @@
 <title>Manato Ueno — iOS Engineer Portfolio</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-section="hero">
 
 <!-- ── NAV ── -->
 <nav>
   <div class="nav-logo">
-    <span class="mark">M</span>
+    <img class="nav-avatar" src="assets/images/profile.jpg" alt="Manato Ueno">
     <span class="name-en">Manato Ueno</span>
     <span class="name-ja">上野 愛翔</span>
   </div>
@@ -30,6 +30,9 @@
       <button class="lang-btn active" data-lang="ja">JA</button>
     </div>
     <div class="nav-badge" data-en="Available 2029" data-ja="2029年 卒業見込み">2029年 卒業見込み</div>
+    <button class="nav-menu" aria-label="メニュー" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -100,6 +103,10 @@
 
 <!-- ── ABOUT ── -->
 <section id="about">
+  <div class="mac-bar" aria-hidden="true">
+    <span class="mac-dot r"></span><span class="mac-dot y"></span><span class="mac-dot g"></span>
+    <span class="mac-wintitle" data-en="About" data-ja="自己紹介">自己紹介</span>
+  </div>
   <div class="sec-head">
     <div class="sec-eyebrow"><span class="line"></span><span class="num">01</span><span data-en="About" data-ja="自己紹介">自己紹介</span></div>
     <h2 class="sec-title reveal" data-en="Engineer at the intersection of craft, ecosystem, and global." data-ja="作り込み・エコシステム・グローバル — その交点で開発する。">作り込み・エコシステム・グローバル — その交点で開発する。</h2>
@@ -112,6 +119,10 @@
 
 <!-- ── TIMELINE ── -->
 <section id="timeline">
+  <div class="mac-bar" aria-hidden="true">
+    <span class="mac-dot r"></span><span class="mac-dot y"></span><span class="mac-dot g"></span>
+    <span class="mac-wintitle" data-en="Timeline" data-ja="タイムライン">タイムライン</span>
+  </div>
   <div class="sec-head">
     <div class="sec-eyebrow"><span class="line"></span><span class="num">02</span><span data-en="Timeline" data-ja="タイムライン">タイムライン</span></div>
     <h2 class="sec-title reveal">2025 — 2026</h2>
@@ -124,6 +135,10 @@
 
 <!-- ── SKILLS ── -->
 <section id="skills">
+  <div class="mac-bar" aria-hidden="true">
+    <span class="mac-dot r"></span><span class="mac-dot y"></span><span class="mac-dot g"></span>
+    <span class="mac-wintitle" data-en="Skills" data-ja="スキル">スキル</span>
+  </div>
   <div class="sec-head">
     <div class="sec-eyebrow"><span class="line"></span><span class="num">03</span><span data-en="Skills" data-ja="スキル">スキル</span></div>
     <h2 class="sec-title reveal" data-en="Tools I reach for." data-ja="日常的に使う技術スタック。">日常的に使う技術スタック。</h2>
@@ -173,6 +188,10 @@
 
 <!-- ── PROJECTS ── -->
 <section id="projects">
+  <div class="mac-bar" aria-hidden="true">
+    <span class="mac-dot r"></span><span class="mac-dot y"></span><span class="mac-dot g"></span>
+    <span class="mac-wintitle" data-en="Work" data-ja="制作物">制作物</span>
+  </div>
   <div class="sec-head">
     <div class="sec-eyebrow"><span class="line"></span><span class="num">04</span><span data-en="Selected Work" data-ja="主要プロジェクト">主要プロジェクト</span></div>
     <h2 class="sec-title reveal" data-en="Three apps. One thesis: UX wins." data-ja="3つのアプリ、1つの結論 — UXが勝つ。">3つのアプリ、1つの結論 — UXが勝つ。</h2>
@@ -443,6 +462,10 @@
 
 <!-- ── VISION ── -->
 <section id="vision">
+  <div class="mac-bar" aria-hidden="true">
+    <span class="mac-dot r"></span><span class="mac-dot y"></span><span class="mac-dot g"></span>
+    <span class="mac-wintitle" data-en="Now" data-ja="現在">現在</span>
+  </div>
   <div class="sec-head">
     <div class="sec-eyebrow"><span class="line"></span><span class="num">05</span><span data-en="Now" data-ja="現在">現在</span></div>
     <h2 class="sec-title reveal" data-en="Currently working on." data-ja="今、取り組んでいること。">今、取り組んでいること。</h2>
@@ -464,8 +487,8 @@
       <div class="award-title" data-en="MIXI Special Award"  data-ja="MIXI 特別賞">MIXI 特別賞</div>
       <div class="award-event" data-en="try! Swift 2026 Student Hackathon — 2026.04" data-ja="try! Swift 2026 学生ハッカソン — 2026.04">try! Swift 2026 学生ハッカソン — 2026.04</div>
       <div class="award-desc"
-           data-en="Acted as PM and youngest team member at an international conference hackathon — and won. Immediately after, secured direct mentorship from Yamaken, a senior engineer at LINE Yahoo."
-           data-ja="国際カンファレンス try! Swift 2026 の学生ハッカソンで、チーム最年少のPMとして特別賞を受賞。受賞直後にLINEヤフー シニアエンジニア ヤマケン氏からメンタリング承諾を獲得。">国際カンファレンス try! Swift 2026 の学生ハッカソンで、チーム最年少のPMとして特別賞を受賞。受賞直後にLINEヤフー シニアエンジニア ヤマケン氏からメンタリング承諾を獲得。</div>
+           data-en="Acted as PM and youngest team member at an international conference hackathon — and won. Afterwards, a Swift engineer met at the conference personally agreed to mentor me."
+           data-ja="国際カンファレンス try! Swift 2026 の学生ハッカソンで、チーム最年少のPMとして特別賞を受賞。カンファレンスで出会ったSwiftエンジニアの方から個人的にメンタリングを承諾していただいた。">国際カンファレンス try! Swift 2026 の学生ハッカソンで、チーム最年少のPMとして特別賞を受賞。カンファレンスで出会ったSwiftエンジニアの方から個人的にメンタリングを承諾していただいた。</div>
     </div>
     <div class="award-card reveal">
       <div class="award-title" data-en="Corporate Award"    data-ja="企業賞">企業賞</div>
@@ -501,9 +524,9 @@
        data-ja="インターンシップ・共同開発・技術交流など、お気軽にご連絡ください。基本24時間以内に返信します。">インターンシップ・共同開発・技術交流など、お気軽にご連絡ください。基本24時間以内に返信します。</p>
   </div>
   <div class="contact-row">
-    <a href="mailto:your@email.com" class="btn btn-primary" data-en="Send Email" data-ja="メールを送る">メールを送る</a>
-    <a href="#" class="btn btn-ghost">GitHub</a>
-    <a href="#" class="btn btn-ghost">X (Twitter)</a>
+    <a href="mailto:tonama1226@gmail.com" class="btn btn-primary" data-en="Send Email" data-ja="メールを送る">メールを送る</a>
+    <a href="https://github.com/manasuta" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+    <a href="https://x.com/manato65340" target="_blank" rel="noopener" class="btn btn-ghost">X (Twitter)</a>
   </div>
 </section>
 

@@ -90,7 +90,7 @@ const PORTFOLIO_DATA = {
       date: "2026.04",
       dot: "award",
       title: { ja: "try! Swift 2026 学生ハッカソン — MIXI特別賞受賞", en: "try! Swift 2026 Student Hackathon — MIXI Special Award" },
-      body:  { ja: "国際カンファレンス try! Swift 2026 の学生ハッカソンで、チーム最年少のPMとしてMIXI特別賞を受賞。受賞直後、LINEヤフー シニアエンジニア ヤマケン氏からのメンタリング承諾を獲得。", en: "Won the MIXI Special Award as the youngest PM at the try! Swift 2026 international conference hackathon. Immediately secured mentorship from Yamaken, a senior engineer at LINE Yahoo." },
+      body:  { ja: "国際カンファレンス try! Swift 2026 の学生ハッカソンで、チーム最年少のPMとしてMIXI特別賞を受賞。受賞後、カンファレンスで出会ったSwiftエンジニアの方から個人的にメンタリングを承諾していただいた。", en: "Won the MIXI Special Award as the youngest PM at the try! Swift 2026 international conference hackathon. Afterwards, a Swift engineer met at the conference personally agreed to mentor me." },
       badges: [{ type: "award", text: "🏆 MIXI特別賞" }]
     },
     {
@@ -155,13 +155,13 @@ const PORTFOLIO_DATA = {
     },
     {
       status: "active",
-      title: { ja: "LINEヤフー ヤマケン氏によるメンタリング", en: "Mentorship — LINE Yahoo (Yamaken)" },
-      body:  { ja: "try! Swiftにてメンター承諾を獲得。業界トップエンジニアから直接指導を受ける機会を確保した。", en: "Secured mentorship at try! Swift from a senior engineer at LINE Yahoo — direct guidance from the industry front line." }
+      title: { ja: "Swiftエンジニアによる個人メンタリング", en: "Personal Mentorship from Swift Engineer" },
+      body:  { ja: "try! Swiftで出会ったSwiftエンジニアの方から、個人的にメンタリングを承諾していただき、継続的に指導を受けている。", en: "A Swift engineer met at try! Swift personally agreed to mentor me — receiving ongoing guidance on development and career." }
     },
     {
       status: "preparing",
-      title: { ja: "フェンリル インターンシップ",         en: "Fenrir Internship" },
-      body:  { ja: "国内トップiOS開発会社フェンリルのインターン選考に向けて準備中。", en: "Preparing for selection at Fenrir, a leading iOS development firm in Japan." }
+      title: { ja: "iOSインターンシップ",         en: "iOS Internship" },
+      body:  { ja: "国内のiOS開発会社へのインターンシップに向けて準備中。", en: "Preparing to apply for internships at iOS development companies in Japan." }
     },
     {
       status: "preparing",
