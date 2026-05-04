@@ -584,3 +584,82 @@ struct TaskRow: View {
   window.addEventListener('scroll', update, { passive: true });
   update(); // initialize immediately on load
 })();
+
+/* ── Ambient Data Dust (Canvas Parallax) ── */
+function setupDataDust() {
+  // スマホなど処理を軽くしたい場合はスキップ（好みで外してもOK）
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:0.45;';
+  // 背景ノイズのすぐ下あたりに挿入
+  document.body.prepend(canvas);
+
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * w;
+      this.y = Math.random() * h;
+      this.r = Math.random() * 1.2 + 0.3; // 極小のサイズ
+      this.vx = (Math.random() - 0.5) * 0.15;
+      this.vy = (Math.random() - 0.5) * 0.15 - 0.15; // ゆっくり上に昇る
+      this.alpha = Math.random() * 0.4 + 0.1;
+    }
+    update(mx, my) {
+      this.x += this.vx;
+      this.y += this.vy;
+      // マウスの動きに逆らうパララックス効果
+      this.x -= mx * 0.2;
+      this.y -= my * 0.2;
+
+      // 画面外に出たらループ
+      if (this.x < 0) this.x = w;
+      if (this.x > w) this.x = 0;
+      if (this.y < 0) this.y = h;
+      if (this.y > h) this.y = 0;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < 70; i++) particles.push(new Particle());
+
+  let mouseX = 0, mouseY = 0;
+  let targetX = 0, targetY = 0;
+
+  document.addEventListener('mousemove', e => {
+    // マウス位置を -1 〜 1 に正規化
+    targetX = (e.clientX / w - 0.5) * 2;
+    targetY = (e.clientY / h - 0.5) * 2;
+  });
+
+  function animate() {
+    ctx.clearRect(0, 0, w, h);
+    // マウスの動きを滑らかに追従
+    mouseX += (targetX - mouseX) * 0.05;
+    mouseY += (targetY - mouseY) * 0.05;
+
+    particles.forEach(p => {
+      p.update(mouseX, mouseY);
+      p.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+// 実行
+setupDataDust();

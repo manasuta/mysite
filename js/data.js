@@ -150,7 +150,7 @@ const PORTFOLIO_DATA = {
   activities: [
     {
       status: "active",
-      title: { ja: "近大発 iOSチーム創設",               en: "Founding Kindai's first iOS team" },
+      title: { ja: "近大発 iOSチームCYPER（サイパー）創設",               en: "Founding Kindai's first iOS team" },
       body:  { ja: "近畿大学発、初のiOS開発チームの設立に向けて活動中。", en: "Working to establish the first iOS dev team out of Kindai University." }
     },
     {
