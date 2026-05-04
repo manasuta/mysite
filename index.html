@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manato Ueno — iOS Engineer Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">
+    <span class="mark">M</span>
+    <span class="name-en">Manato Ueno</span>
+    <span class="name-ja">上野 愛翔</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about"    data-en="About"    data-ja="自己紹介">自己紹介</a></li>
+    <li><a href="#timeline" data-en="Timeline" data-ja="タイムライン">タイムライン</a></li>
+    <li><a href="#skills"   data-en="Skills"   data-ja="スキル">スキル</a></li>
+    <li><a href="#projects" data-en="Work"     data-ja="制作物">制作物</a></li>
+    <li><a href="#vision"   data-en="Now"      data-ja="現在">現在</a></li>
+    <li><a href="#awards"   data-en="Awards"   data-ja="受賞">受賞</a></li>
+    <li><a href="#contact"  data-en="Contact"  data-ja="連絡先">連絡先</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn active" data-lang="ja">JA</button>
+    </div>
+    <div class="nav-badge" data-en="Available 2029" data-ja="2029年 卒業見込み">2029年 卒業見込み</div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-glow"></div>
+
+  <div class="hero-text">
+    <div class="hero-avatar">
+      <img src="assets/images/profile.jpg" alt="Manato Ueno">
+    </div>
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      <span data-en="iOS Developer · CS Student · Kindai Univ." data-ja="iOSエンジニア志望 / 近畿大学 情報学部">iOSエンジニア志望 / 近畿大学 情報学部</span>
+    </div>
+
+    <h1 class="name">
+      <span class="en">Manato Ueno</span>
+      <span class="ja">上野 愛翔</span>
+    </h1>
+
+    <p class="hero-role">
+      <span class="iOS">iOS Engineer</span>
+      <span class="sep">/</span>
+      <span data-en="UI · UX · Apple Ecosystem" data-ja="UI・UX・Appleエコシステム">UI・UX・Appleエコシステム</span>
+    </p>
+
+    <p class="hero-sub"
+       data-en="2nd-year Cybersecurity student at Kindai University. One year in: 2 hackathon awards, a Swift Student Challenge submission praised by an Apple Evangelist, a conversation with Tim Cook, and a role as Apple on Campus staff — all while scoring 92/100 (GPA 3.55) every semester."
+       data-ja="近畿大学 情報学部 サイバーセキュリティコース2年。学習開始から1年で、ハッカソン2冠・Swift Student Challenge エバンジェリスト高評価・Tim Cook氏との対話・Apple on Campusスタッフ就任を達成。成績平均92点（GPA 3.55）も維持しながら、UIとUXの「作り込み」に徹底してこだわるiOSエンジニアです。">
+      近畿大学 情報学部 サイバーセキュリティコース2年。学習開始から1年で、ハッカソン2冠・Swift Student Challenge エバンジェリスト高評価・Tim Cook氏との対話・Apple on Campusスタッフ就任を達成。成績平均92点（GPA 3.55）も維持しながら、UIとUXの「作り込み」に徹底してこだわるiOSエンジニアです。
+    </p>
+
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary" data-en="See My Work →" data-ja="制作物を見る →">制作物を見る →</a>
+      <a href="#contact"  class="btn btn-ghost"   data-en="Get in Touch"  data-ja="お問い合わせ">お問い合わせ</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label" data-en="Awards"     data-ja="受賞">受賞</span></div>
+      <div class="stat"><span class="stat-num">4+</span><span class="stat-label" data-en="Hackathons" data-ja="ハッカソン">ハッカソン</span></div>
+      <div class="stat"><span class="stat-num">705</span><span class="stat-label" data-en="TOEIC"     data-ja="TOEIC">TOEIC</span></div>
+      <div class="stat"><span class="stat-num">92</span><span class="stat-label"  data-en="Score / GPA 3.55" data-ja="成績平均 / GPA 3.55">成績平均 / GPA 3.55</span></div>
+    </div>
+  </div>
+
+  <div class="hero-marquee" aria-hidden="true">
+    <div class="hm-track">
+      <span class="hm-item"><span class="hm-dot"></span>MIXI 特別賞 · try! Swift 2026</span>
+      <span class="hm-sep">→</span>
+      <span class="hm-item"><span class="hm-dot blue"></span>Apple on Campus · 近畿大学スタッフ</span>
+      <span class="hm-sep">→</span>
+      <span class="hm-item"><span class="hm-dot amber"></span>特待生認定 · 成績平均 92点 / GPA 3.55</span>
+      <span class="hm-sep">→</span>
+      <span class="hm-item"><span class="hm-dot"></span>Swift Student Challenge 2026 提出</span>
+      <span class="hm-sep">→</span>
+      <span class="hm-item"><span class="hm-dot blue"></span>MIXI 特別賞 · try! Swift 2026</span>
+      <span class="hm-sep">→</span>
+      <span class="hm-item"><span class="hm-dot amber"></span>Apple on Campus · 近畿大学スタッフ</span>
+      <span class="hm-sep">→</span>
+      <span class="hm-item"><span class="hm-dot"></span>特待生認定 · 成績平均 92点 / GPA 3.55</span>
+      <span class="hm-sep">→</span>
+      <span class="hm-item"><span class="hm-dot blue"></span>Swift Student Challenge 2026 提出</span>
+      <span class="hm-sep">→</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="sec-head">
+    <div class="sec-eyebrow"><span class="line"></span><span class="num">01</span><span data-en="About" data-ja="自己紹介">自己紹介</span></div>
+    <h2 class="sec-title reveal" data-en="Engineer at the intersection of craft, ecosystem, and global." data-ja="作り込み・エコシステム・グローバル — その交点で開発する。">作り込み・エコシステム・グローバル — その交点で開発する。</h2>
+    <p class="sec-lede reveal"
+       data-en="A snapshot of what I bring to a team."
+       data-ja="チームに持ち込める強みの全体像。">チームに持ち込める強みの全体像。</p>
+  </div>
+  <div class="strengths"></div>
+</section>
+
+<!-- ── TIMELINE ── -->
+<section id="timeline">
+  <div class="sec-head">
+    <div class="sec-eyebrow"><span class="line"></span><span class="num">02</span><span data-en="Timeline" data-ja="タイムライン">タイムライン</span></div>
+    <h2 class="sec-title reveal">2025 — 2026</h2>
+    <p class="sec-lede reveal"
+       data-en="One year, end-to-end. From writing my first Swift line to leading an international team."
+       data-ja="最初のSwiftコードから、国際チームのリーダーまで。学習開始からの1年間。">最初のSwiftコードから、国際チームのリーダーまで。学習開始からの1年間。</p>
+  </div>
+  <div class="timeline"></div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="sec-head">
+    <div class="sec-eyebrow"><span class="line"></span><span class="num">03</span><span data-en="Skills" data-ja="スキル">スキル</span></div>
+    <h2 class="sec-title reveal" data-en="Tools I reach for." data-ja="日常的に使う技術スタック。">日常的に使う技術スタック。</h2>
+  </div>
+  <div class="skills">
+    <div class="skill-group reveal">
+      <div class="label" data-en="iOS · Apple" data-ja="iOS / Apple">iOS / Apple</div>
+      <div class="pills">
+        <span class="pill primary">Swift</span>
+        <span class="pill primary">SwiftUI</span>
+        <span class="pill">Xcode</span>
+        <span class="pill">Vision</span>
+        <span class="pill">CoreML</span>
+        <span class="pill">AVFoundation</span>
+        <span class="pill">AATCE</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="label" data-en="AI / Other" data-ja="AI・その他">AI・その他</div>
+      <div class="pills">
+        <span class="pill">OpenAI API</span>
+        <span class="pill">Generative AI</span>
+        <span class="pill">Python</span>
+        <span class="pill">React Native</span>
+        <span class="pill">TypeScript</span>
+        <span class="pill">Git</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="label" data-en="Languages" data-ja="言語">言語</div>
+      <div class="pills">
+        <span class="pill" data-en="Japanese (Native)" data-ja="日本語 (Native)">日本語 (Native)</span>
+        <span class="pill">English · TOEIC 705</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="label" data-en="Soft Skills" data-ja="ソフトスキル">ソフトスキル</div>
+      <div class="pills">
+        <span class="pill" data-en="Team Leadership" data-ja="チームリーダー">チームリーダー</span>
+        <span class="pill" data-en="Mentoring"       data-ja="メンタリング">メンタリング</span>
+        <span class="pill" data-en="Presentation"    data-ja="プレゼン">プレゼン</span>
+        <span class="pill" data-en="Community"       data-ja="コミュニティ">コミュニティ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="sec-head">
+    <div class="sec-eyebrow"><span class="line"></span><span class="num">04</span><span data-en="Selected Work" data-ja="主要プロジェクト">主要プロジェクト</span></div>
+    <h2 class="sec-title reveal" data-en="Three apps. One thesis: UX wins." data-ja="3つのアプリ、1つの結論 — UXが勝つ。">3つのアプリ、1つの結論 — UXが勝つ。</h2>
+  </div>
+
+  <!-- SigNinja -->
+  <article class="case split reveal">
+    <div>
+      <div class="case-head">
+        <img class="case-icon" src="assets/images/app_icon.png" alt="SigNinja icon">
+        <div class="case-titlewrap">
+          <h3>SigNinja</h3>
+          <div class="role" data-en="Solo Developer · Swift Student Challenge 2026" data-ja="個人開発 · Swift Student Challenge 2026 提出作">個人開発 · Swift Student Challenge 2026 提出作</div>
+        </div>
+      </div>
+
+      <p class="case-tagline"
+         data-en="&ldquo;Lower the barrier to learning sign language — turn it into ninja training.&rdquo;"
+         data-ja="「手話学習のハードルを下げる — 修行のように、手で覚える。」">「手話学習のハードルを下げる — 修行のように、手で覚える。」</p>
+
+      <p class="case-desc"
+         data-en="An iOS app that teaches Japanese Sign Language through embodied practice. Vision framework recognises hand poses in real time; the user physically forms each sign as part of an interactive ninja-training journey."
+         data-ja="日本手話（JSL）を身体で覚えるためのiOSアプリ。Visionフレームワークが手のポーズをリアルタイムで認識し、忍者修行というメタファーの中で、ユーザーが実際に「印を結び」ながら学習する体験を構築しました。">日本手話（JSL）を身体で覚えるためのiOSアプリ。Visionフレームワークが手のポーズをリアルタイムで認識し、忍者修行というメタファーの中で、ユーザーが実際に「印を結び」ながら学習する体験を構築しました。</p>
+
+      <div class="pills" style="margin-bottom:1.5rem;">
+        <span class="pill primary">SwiftUI</span>
+        <span class="pill primary">Vision</span>
+        <span class="pill primary">CoreML</span>
+        <span class="pill">AVFoundation</span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary" data-en="Ask for Details →" data-ja="詳細を聞く →">詳細を聞く →</a>
+      </div>
+    </div>
+
+    <div class="case-visuals">
+      <div class="phone-mini p1">
+        <div class="screen"><div class="island"></div><img src="assets/images/start.png" alt="Start screen"></div>
+      </div>
+      <div class="phone-mini p2">
+        <div class="screen"><div class="island"></div><img src="assets/images/sign.png" alt="Sign detection"></div>
+      </div>
+      <div class="phone-mini p3">
+        <div class="screen"><div class="island"></div><img src="assets/images/collections.png" alt="Collections"></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- まんがる -->
+  <article class="case reveal">
+    <div class="case-head">
+      <div class="case-titlewrap">
+        <h3>まんがる <span style="font-family:var(--mono);font-size:13px;color:var(--muted);font-weight:400;margin-left:.5rem;">Manga-ru</span></h3>
+        <div class="role" data-en="PM · Team Leader · try! Swift 2026 Hackathon (International Team)" data-ja="PM・チームリーダー · try! Swift 2026 学生ハッカソン（国際チーム）">PM・チームリーダー · try! Swift 2026 学生ハッカソン（国際チーム）</div>
+      </div>
+      <span class="case-award">🏆 MIXI 特別賞</span>
+    </div>
+
+    <div class="case-visuals mangaru-visual">
+      <div class="phone-mini contain p2" style="width:220px;">
+        <div class="screen"><div class="island"></div><img src="assets/images/mangaru.jpg" alt="まんがる 生成画面"></div>
+      </div>
+    </div>
+
+    <p class="case-tagline"
+       data-en="&ldquo;Turn everyday moments into shared laughter.&rdquo;"
+       data-ja="「日常の何気ない行動を、最高のコミュニケーションの場に変える。」">「日常の何気ない行動を、最高のコミュニケーションの場に変える。」</p>
+
+    <p class="case-desc"
+       data-en="An iOS app that transforms a friend's pose into a manga panel using generative AI. Vision crops the subject, the app composites a manga-style background, and AI writes a perfectly absurd speech bubble — all in seconds, designed for shared laughter."
+       data-ja="iPhoneで撮影した友人のポーズを、生成AIが漫画のワンシーンに変えるiOSアプリ。Visionで人物を切り抜き、漫画風背景を合成し、ポーズに合った絶妙なセリフをAIが生成。残ったその場で笑い合う体験を、数秒で。">iPhoneで撮影した友人のポーズを、生成AIが漫画のワンシーンに変えるiOSアプリ。Visionで人物を切り抜き、漫画風背景を合成し、ポーズに合った絶妙なセリフをAIが生成。残ったその場で笑い合う体験を、数秒で。</p>
+
+    <div class="pills" style="margin-bottom:1.25rem;">
+      <span class="pill primary">SwiftUI</span>
+      <span class="pill primary">Vision</span>
+      <span class="pill primary">OpenAI API</span>
+      <span class="pill">CoreImage</span>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label" data-en="PM Decision" data-ja="PMの意思決定">PMの意思決定</div>
+      <p data-en="Mid-hackathon, the team locked into complex AR camera work — development stalled. I called it: <strong>users don't want cutting-edge AR, they want laughter.</strong> Pivoted to 2D image compositing — lower technical risk, dramatically higher UX payoff. That single decision won the MIXI Special Award."
+         data-ja="開発中盤、チームはAR技術の実装に固執し難航していた。私は判断を下した。「<strong>ユーザーが求めるのは高度な技術ではなく、直感的なUXと笑いだ。</strong>」ARを捨て、実装リスクの低い2D画像切り抜き＋AI合成へ大胆にピボット。技術より体験を優先したこの決断が、MIXI特別賞獲得に直結した。">開発中盤、チームはAR技術の実装に固執し難航していた。私は判断を下した。「<strong>ユーザーが求めるのは高度な技術ではなく、直感的なUXと笑いだ。</strong>」ARを捨て、実装リスクの低い2D画像切り抜き＋AI合成へ大胆にピボット。技術より体験を優先したこの決断が、MIXI特別賞獲得に直結した。</p>
+    </div>
+
+    <div class="insight-label" data-en="Core UX Flow" data-ja="コアUXフロー" style="margin-top:1.5rem;">コアUXフロー</div>
+    <div class="ux-flow">
+      <div class="ux-step">
+        <div class="ux-num">STEP 01</div>
+        <div class="ux-label" data-en="Shoot"     data-ja="撮影">撮影</div>
+        <div class="ux-desc"  data-en="Snap a friend's pose with iPhone." data-ja="iPhoneで友人のポーズを撮影する。">iPhoneで友人のポーズを撮影する。</div>
+      </div>
+      <div class="ux-step">
+        <div class="ux-num">STEP 02</div>
+        <div class="ux-label" data-en="Auto Crop"  data-ja="自動切り抜き">自動切り抜き</div>
+        <div class="ux-desc"  data-en="Vision isolates the subject precisely." data-ja="Visionが人物を自動で切り抜く。">Visionが人物を自動で切り抜く。</div>
+      </div>
+      <div class="ux-step">
+        <div class="ux-num">STEP 03</div>
+        <div class="ux-label" data-en="AI Compose" data-ja="AI合成">AI合成</div>
+        <div class="ux-desc"  data-en="Manga BG + AI bubble synthesised in seconds." data-ja="漫画風背景とAI生成セリフを即時合成。">漫画風背景とAI生成セリフを即時合成。</div>
+      </div>
+      <div class="ux-step">
+        <div class="ux-num">STEP 04</div>
+        <div class="ux-label" data-en="Share"      data-ja="共有">共有</div>
+        <div class="ux-desc"  data-en="Show, laugh, share to SNS." data-ja="その場で見せて笑い、SNSへシェア。">その場で見せて笑い、SNSへシェア。</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- FogNot -->
+  <article class="case fognot reveal">
+    <div class="case-head">
+      <div class="case-titlewrap">
+        <h3>FogNot <span style="font-family:var(--mono);font-size:13px;color:var(--muted);font-weight:400;margin-left:.5rem;">フォグノット</span></h3>
+        <div class="role" data-en="Solo · Design + iOS Development · Personal Project" data-ja="ソロ · デザイン + iOS開発 · 個人開発">ソロ · デザイン + iOS開発 · 個人開発</div>
+      </div>
+      <span class="case-pill" data-en="Personal Project" data-ja="個人開発">個人開発</span>
+    </div>
+
+    <div class="fognot-grid">
+      <div class="fognot-text">
+        <p class="case-tagline mono"
+           data-en="forget &times; fog &times; not &mdash; &ldquo;Clear the fog of assignments.&rdquo;"
+           data-ja="forget × fog × not — 「課題の霧を晴らす。」">forget × fog × not — 「課題の霧を晴らす。」</p>
+
+        <p class="case-desc"
+           data-en="A monotone, minimal task manager built for university students drowning in assignments. Title + deadline — that's all it takes. Tasks are categorised by subject (mapped to Kindai's course structure: 知能 / サイバー / 実世界), and classified as shared or personal. Under the hood: Firebase Auth (email + Google Sign-In) for collaborative editing, EventKit for iOS Calendar auto-sync, WidgetKit + App Groups for a Home Screen Widget, and a built-in calendar view for deadline overview."
+           data-ja="課題やレポートに追われる大学生のための、白・黒・グレーで設計されたミニマルな課題管理アプリ。タイトルと期限を入れるだけ。タスクは近大の授業体系に沿った科目カテゴリ（知能・サイバー・実世界など）で分類でき、共同/個人の区別も1タスクごとに設定可能。Firebase Authentication（メール / Googleサインイン）による共同編集、EventKitによるiOSカレンダー自動同期、WidgetKitによるホーム画面ウィジェット、アプリ内カレンダービューを実装。">課題やレポートに追われる大学生のための、白・黒・グレーで設計されたミニマルな課題管理アプリ。タイトルと期限を入れるだけ。タスクは近大の授業体系に沿った科目カテゴリ（知能・サイバー・実世界など）で分類でき、共同/個人の区別も1タスクごとに設定可能。Firebase Authentication（メール / Googleサインイン）による共同編集、EventKitによるiOSカレンダー自動同期、WidgetKitによるホーム画面ウィジェット、アプリ内カレンダービューを実装。</p>
+
+        <div class="pills" style="margin-bottom:1.5rem;">
+          <span class="pill primary">SwiftUI</span>
+          <span class="pill primary">Firebase</span>
+          <span class="pill primary">EventKit</span>
+          <span class="pill primary">WidgetKit</span>
+          <span class="pill">App Groups</span>
+          <span class="pill">Google Sign-In</span>
+        </div>
+
+        <div class="fognot-features">
+          <div class="ff">
+            <div class="ff-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h12"/></svg>
+            </div>
+            <div>
+              <div class="ff-title" data-en="Frictionless capture"   data-ja="サクッと追加">サクッと追加</div>
+              <div class="ff-body"  data-en="Title + deadline. Two fields, no friction — built for the exact moment a deadline is announced." data-ja="タイトルと期限の2項目だけ。発表された瞬間にすぐ追加できる、迷いのないUI。">タイトルと期限の2項目だけ。発表された瞬間にすぐ追加できる、迷いのないUI。</div>
+            </div>
+          </div>
+          <div class="ff">
+            <div class="ff-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <div>
+              <div class="ff-title" data-en="iOS Calendar auto-sync" data-ja="iOSカレンダー自動連携">iOSカレンダー自動連携</div>
+              <div class="ff-body"  data-en="EventKit writes every assignment straight into the system calendar — see deadlines in the context of your whole life." data-ja="EventKitで標準カレンダーに自動書き込み。学業と予定を一つのカレンダーで俯瞰できる。">EventKitで標準カレンダーに自動書き込み。学業と予定を一つのカレンダーで俯瞰できる。</div>
+            </div>
+          </div>
+          <div class="ff">
+            <div class="ff-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="3"/><rect x="8" y="8" width="8" height="3" rx="1"/><circle cx="9" cy="15" r="1"/><circle cx="14" cy="15" r="1"/></svg>
+            </div>
+            <div>
+              <div class="ff-title" data-en="Home Screen Widget"     data-ja="ホーム画面ウィジェット">ホーム画面ウィジェット</div>
+              <div class="ff-body"  data-en="WidgetKit + App Groups push the next 5 deadlines to your Home Screen — no app launch, no forgotten paper." data-ja="WidgetKit + App Groupsで直近5件をホーム画面に常駐。アプリを開かなくても期限が見える。">WidgetKit + App Groupsで直近5件をホーム画面に常駐。アプリを開かなくても期限が見える。</div>
+            </div>
+          </div>
+          <div class="ff">
+            <div class="ff-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="9" r="3"/><circle cx="16" cy="14" r="3"/><path d="M3 20c0-3 3-5 6-5M13 20c0-2 2-3.5 4-3.5"/></svg>
+            </div>
+            <div>
+              <div class="ff-title" data-en="Shared with friends"    data-ja="友達と共有">友達と共有</div>
+              <div class="ff-body"  data-en="Firebase Auth + collaborative lists. Same class, same deadlines, never out of sync." data-ja="Firebase Authで友人と共有編集。同じ授業の課題を一緒に管理し、漏れを防ぐ。">Firebase Authで友人と共有編集。同じ授業の課題を一緒に管理し、漏れを防ぐ。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-visuals" style="min-height:420px;">
+        <div class="phone-mini p1">
+          <div class="screen"><div class="island"></div>
+            <img src="assets/images/fn-onboarding.png" alt="FogNot onboarding">
+          </div>
+        </div>
+        <div class="phone-mini p2">
+          <div class="screen"><div class="island"></div>
+            <img src="assets/images/fn-home.png" alt="FogNot home">
+          </div>
+        </div>
+        <div class="phone-mini p3">
+          <div class="screen"><div class="island"></div>
+            <img src="assets/images/fn-calendar.png" alt="FogNot calendar">
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Other projects -->
+  <div class="proj-sub-title" data-en="Other Projects" data-ja="その他のプロジェクト">その他のプロジェクト</div>
+  <div class="proj-grid">
+
+    <div class="proj-card reveal">
+      <div class="top">
+        <div>
+          <div class="pt">FamLog</div>
+          <div class="pe" data-en="Kansai Beginners Hackathon Vol.7" data-ja="関西ビギナーズハッカソン Vol.7">関西ビギナーズハッカソン Vol.7</div>
+        </div>
+        <span class="tl-badge badge-award">🏆 企業賞</span>
+      </div>
+      <p class="pd"
+         data-en="A family-communication app that surfaces children's daily wins. Kids post 'I did it' moments with AI-suggested captions; parents cheer with likes. Weekly AI 'news anchor' summaries spark dinner-table talk."
+         data-ja="子供の日々の達成を家族で見える化するコミュニケーションアプリ。「できた！」投稿にAIが説明文を提案し、保護者がいいねで応援。AIが週次ニュース風サマリーを生成し、食卓の会話を創る。">子供の日々の達成を家族で見える化するコミュニケーションアプリ。「できた！」投稿にAIが説明文を提案し、保護者がいいねで応援。AIが週次ニュース風サマリーを生成し、食卓の会話を創る。</p>
+      <div class="bot">
+        <div class="pills">
+          <span class="pill">React Native</span>
+          <span class="pill">Expo</span>
+          <span class="pill">AI</span>
+        </div>
+        <a href="https://github.com/uchiyama886/KBH2025_TEAM05" target="_blank" rel="noopener" class="proj-link">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="top">
+        <div>
+          <div class="pt" data-en="Wagamama Gourmet" data-ja="わがままグルメ">わがままグルメ</div>
+          <div class="pe" data-en="KC3 Hackathon 2026" data-ja="KC3ハッカソン 2026">KC3ハッカソン 2026</div>
+        </div>
+      </div>
+      <p class="pd"
+         data-en="A restaurant-discovery app that solves dining indecision with real-time slider weights — budget, speed, vibe, distance — re-ranking the map dynamically. Includes preset modes (Broke, Date) and natural-language search."
+         data-ja="予算・速さ・雰囲気・距離をスライダーで調整すると、リアルタイムで地図上の店が再ランキングされるグルメ探索アプリ。「節約モード」「デートモード」などプリセット、チャット形式の自然言語検索にも対応。">予算・速さ・雰囲気・距離をスライダーで調整すると、リアルタイムで地図上の店が再ランキングされるグルメ探索アプリ。「節約モード」「デートモード」などプリセット、チャット形式の自然言語検索にも対応。</p>
+      <div class="bot">
+        <div class="pills">
+          <span class="pill">TypeScript</span>
+          <span class="pill">React</span>
+          <span class="pill">FastAPI</span>
+          <span class="pill">MapLibre</span>
+        </div>
+        <a href="https://github.com/kc3hack/2026_team25" target="_blank" rel="noopener" class="proj-link">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="top">
+        <div>
+          <div class="pt" data-en="AI Education Platform" data-ja="AI教育プラットフォーム">AI教育プラットフォーム</div>
+          <div class="pe" data-en="OpenAI × Kindai Hackathon 2025.12" data-ja="OpenAI × 近畿大学ハッカソン 2025.12">OpenAI × 近畿大学ハッカソン 2025.12</div>
+        </div>
+        <span class="tl-badge badge-ai">✦ GenAI</span>
+      </div>
+      <p class="pd"
+         data-en="Two modes in one platform: a personalised output tutor for students, and an automated learning-program builder + assignment auto-grader for professors — dramatically reducing manual grading time."
+         data-ja="学生向けの個別アウトプットチューターと、教授向けの学習プログラム自動生成・課題自動採点を1つに搭載。OpenAI APIで教授の採点負担を大幅に軽減する。">学生向けの個別アウトプットチューターと、教授向けの学習プログラム自動生成・課題自動採点を1つに搭載。OpenAI APIで教授の採点負担を大幅に軽減する。</p>
+      <div class="bot">
+        <div class="pills">
+          <span class="pill">OpenAI API</span>
+          <span class="pill">Generative AI</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── VISION ── -->
+<section id="vision">
+  <div class="sec-head">
+    <div class="sec-eyebrow"><span class="line"></span><span class="num">05</span><span data-en="Now" data-ja="現在">現在</span></div>
+    <h2 class="sec-title reveal" data-en="Currently working on." data-ja="今、取り組んでいること。">今、取り組んでいること。</h2>
+    <p class="sec-lede reveal"
+       data-en="Five threads, all aimed at the same goal — being ready when the right opportunity opens."
+       data-ja="5つの動き、目指すゴールはひとつ — 機会が訪れたとき、即座に動ける状態でいること。">5つの動き、目指すゴールはひとつ — 機会が訪れたとき、即座に動ける状態でいること。</p>
+  </div>
+  <div class="vision-grid"></div>
+</section>
+
+<!-- ── AWARDS ── -->
+<section id="awards">
+  <div class="sec-head">
+    <div class="sec-eyebrow"><span class="line"></span><span class="num">06</span><span data-en="Awards" data-ja="受賞">受賞</span></div>
+    <h2 class="sec-title reveal" data-en="Highlights." data-ja="主な実績。">主な実績。</h2>
+  </div>
+  <div class="awards">
+    <div class="award-card reveal">
+      <div class="award-title" data-en="MIXI Special Award"  data-ja="MIXI 特別賞">MIXI 特別賞</div>
+      <div class="award-event" data-en="try! Swift 2026 Student Hackathon — 2026.04" data-ja="try! Swift 2026 学生ハッカソン — 2026.04">try! Swift 2026 学生ハッカソン — 2026.04</div>
+      <div class="award-desc"
+           data-en="Acted as PM and youngest team member at an international conference hackathon — and won. Immediately after, secured direct mentorship from Yamaken, a senior engineer at LINE Yahoo."
+           data-ja="国際カンファレンス try! Swift 2026 の学生ハッカソンで、チーム最年少のPMとして特別賞を受賞。受賞直後にLINEヤフー シニアエンジニア ヤマケン氏からメンタリング承諾を獲得。">国際カンファレンス try! Swift 2026 の学生ハッカソンで、チーム最年少のPMとして特別賞を受賞。受賞直後にLINEヤフー シニアエンジニア ヤマケン氏からメンタリング承諾を獲得。</div>
+    </div>
+    <div class="award-card reveal">
+      <div class="award-title" data-en="Corporate Award"    data-ja="企業賞">企業賞</div>
+      <div class="award-event" data-en="Kansai Beginners Hackathon — 2025.07" data-ja="関西ビギナーズハッカソン — 2025.07">関西ビギナーズハッカソン — 2025.07</div>
+      <div class="award-desc"
+           data-en="Won a corporate award just 3 months into coding — with strangers, in a one-month sprint. Simultaneously achieved a semester score of 92/100 while juggling driving school and a part-time job."
+           data-ja="コーディング開始わずか3ヶ月、初対面チームでの1ヶ月開発で企業賞を受賞。車校・アルバイトと並行しながら成績平均92点（GPA 3.55）も同時に達成。">コーディング開始わずか3ヶ月、初対面チームでの1ヶ月開発で企業賞を受賞。車校・アルバイトと並行しながら成績平均92点（GPA 3.55）も同時に達成。</div>
+    </div>
+    <div class="award-card reveal">
+      <div class="award-title" data-en="Kindai Scholar"     data-ja="近畿大学 特待生認定">近畿大学 特待生認定</div>
+      <div class="award-event" data-en="Kindai University — 2026.03" data-ja="近畿大学 — 2026.03">近畿大学 — 2026.03</div>
+      <div class="award-desc"
+           data-en="Semester score 92/100 — the equivalent of GPA 3.55. Achieved top-grade level across all subjects while simultaneously competing in hackathons, working part-time, and attending driving school."
+           data-ja="前期成績平均92点（GPA 3.55）。ハッカソン・アルバイト・車校というハードスケジュールを並行しながら、全科目で最高評価水準の成績を維持。">前期成績平均92点（GPA 3.55）。ハッカソン・アルバイト・車校というハードスケジュールを並行しながら、全科目で最高評価水準の成績を維持。</div>
+    </div>
+    <div class="award-card reveal">
+      <div class="award-title">Swift Student Challenge</div>
+      <div class="award-event">Apple — 2026.03</div>
+      <div class="award-desc"
+           data-en="Submitted 'SigNinja' — a hand-sign learning iOS app — to Apple's global competition. An Apple Evangelist personally evaluated it: 'so close, just one step away.' A direct acknowledgement of near-winner quality."
+           data-ja="手話学習iOSアプリ「SigNinja」をAppleの世界規模コンペに提出。Appleエバンジェリストから直接「あと一歩、惜しい」と評価を受け、受賞水準まで到達していたことを公式に認められた。">手話学習iOSアプリ「SigNinja」をAppleの世界規模コンペに提出。Appleエバンジェリストから直接「あと一歩、惜しい」と評価を受け、受賞水準まで到達していたことを公式に認められた。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="sec-head">
+    <div class="sec-eyebrow"><span class="line"></span><span class="num">07</span><span data-en="Contact" data-ja="連絡先">連絡先</span></div>
+    <h2 class="sec-title reveal" data-en="Let's build something." data-ja="一緒に何か作りましょう。">一緒に何か作りましょう。</h2>
+    <p class="sec-lede reveal"
+       data-en="Open to internships, collaborations, and tech conversations. I reply within a day."
+       data-ja="インターンシップ・共同開発・技術交流など、お気軽にご連絡ください。基本24時間以内に返信します。">インターンシップ・共同開発・技術交流など、お気軽にご連絡ください。基本24時間以内に返信します。</p>
+  </div>
+  <div class="contact-row">
+    <a href="mailto:your@email.com" class="btn btn-primary" data-en="Send Email" data-ja="メールを送る">メールを送る</a>
+    <a href="#" class="btn btn-ghost">GitHub</a>
+    <a href="#" class="btn btn-ghost">X (Twitter)</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Manato Ueno · 上野 愛翔</span>
+  <span data-en="Faculty of Informatics, Kindai University · Cybersecurity" data-ja="近畿大学 情報学部 情報学科 サイバーセキュリティコース">近畿大学 情報学部 情報学科 サイバーセキュリティコース</span>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

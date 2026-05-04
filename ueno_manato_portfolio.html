@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manato Ueno — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06060a;
+  --s1:#0d0d14;
+  --s2:#13131c;
+  --acc:#0a84ff;
+  --acc2:#30d158;
+  --acc3:#bf5af2;
+  --text:#f5f5f7;
+  --muted:#6e6e73;
+  --border:rgba(255,255,255,0.08);
+  --mono:'DM Mono',monospace;
+  --sans:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 2.5rem;
+  background:rgba(6,6,10,0.7);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{font-weight:700;font-size:15px;letter-spacing:-0.02em}
+.nav-logo span{color:var(--acc)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;font-weight:400}
+.nav-links a:hover{color:var(--text)}
+.nav-badge{
+  font-size:11px;font-family:var(--mono);
+  padding:.3rem .8rem;
+  background:rgba(10,132,255,0.15);
+  border:1px solid rgba(10,132,255,0.3);
+  border-radius:999px;color:var(--acc);
+}
+
+/* ─── LANG TOGGLE ─── */
+.lang-toggle{
+  display:flex;align-items:center;
+  background:var(--s2);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:3px;gap:2px;
+}
+.lang-btn{
+  padding:.25rem .65rem;
+  border-radius:999px;
+  border:none;cursor:pointer;
+  background:transparent;
+  color:var(--muted);
+  font-family:var(--mono);
+  font-size:11px;font-weight:500;
+  letter-spacing:.06em;
+  transition:background .2s,color .2s;
+  line-height:1;
+}
+.lang-btn.active{background:var(--acc);color:#fff}
+.lang-btn:hover:not(.active){color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+
+/* ─── HERO ─── */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:8rem 2.5rem 5rem;
+  position:relative;overflow:hidden;
+}
+.hero-glow{
+  position:absolute;
+  top:-20%;right:-10%;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(10,132,255,0.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-glow2{
+  position:absolute;
+  bottom:-10%;left:-5%;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(48,209,88,0.06) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--mono);font-size:11px;
+  color:var(--acc2);letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--acc2);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+h1.name{
+  font-size:clamp(3.5rem,9vw,8rem);
+  font-weight:900;line-height:.9;
+  letter-spacing:-0.04em;
+  margin-bottom:1rem;
+}
+h1.name .en{display:block;color:var(--text)}
+h1.name .ja{
+  display:block;font-size:clamp(1.2rem,3vw,2.5rem);
+  font-weight:300;color:var(--muted);letter-spacing:.05em;margin-top:.5rem;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 2.5rem}
+.htag{
+  font-family:var(--mono);font-size:11px;
+  padding:.35rem .9rem;border-radius:4px;
+  letter-spacing:.06em;
+}
+.htag-blue{background:rgba(10,132,255,0.12);border:1px solid rgba(10,132,255,0.25);color:var(--acc)}
+.htag-green{background:rgba(48,209,88,0.1);border:1px solid rgba(48,209,88,0.25);color:var(--acc2)}
+.htag-purple{background:rgba(191,90,242,0.1);border:1px solid rgba(191,90,242,0.25);color:var(--acc3)}
+.hero-sub{
+  font-size:1rem;color:var(--muted);line-height:1.8;
+  max-width:520px;margin-bottom:2.5rem;font-weight:300;
+}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.75rem 1.5rem;border-radius:8px;
+  font-size:14px;font-weight:600;
+  text-decoration:none;cursor:pointer;border:none;
+  transition:all .2s;
+}
+.btn-blue{background:var(--acc);color:#fff}
+.btn-blue:hover{background:#0071e3;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.2);color:var(--text)}
+
+.hero-stats{
+  display:flex;gap:2.5rem;margin-top:3rem;
+  border-top:1px solid var(--border);padding-top:2rem;flex-wrap:wrap;
+}
+.stat{display:flex;flex-direction:column;gap:.25rem}
+.stat-num{font-size:1.75rem;font-weight:800;letter-spacing:-0.03em;color:var(--text)}
+.stat-label{font-size:11px;font-family:var(--mono);color:var(--muted);letter-spacing:.08em}
+
+/* ─── SECTIONS ─── */
+section{padding:5rem 2.5rem;border-top:1px solid var(--border);position:relative;z-index:1}
+.sec-label{
+  font-family:var(--mono);font-size:10px;color:var(--acc);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.sec-label::before{content:attr(data-n);color:var(--muted)}
+h2.sec-title{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:2.5rem}
+
+/* ─── STRENGTHS ─── */
+.strengths-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.strength-card{background:var(--s1);padding:1.5rem;transition:background .2s}
+.strength-card:hover{background:var(--s2)}
+.sc-icon{font-size:24px;margin-bottom:.75rem}
+.sc-title{font-size:14px;font-weight:700;margin-bottom:.5rem;color:var(--text)}
+.sc-body{font-size:12px;font-family:var(--mono);color:var(--muted);line-height:1.7}
+
+/* ─── TIMELINE ─── */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:.5rem;bottom:.5rem;width:1px;background:linear-gradient(to bottom,var(--acc),var(--acc3),transparent)}
+.tl-item{position:relative;margin-bottom:2.5rem;padding-left:1.5rem}
+.tl-dot{position:absolute;left:-2.4rem;top:.4rem;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg)}
+.tl-dot.award{background:var(--acc2)}
+.tl-dot.apple{background:var(--muted)}
+.tl-date{font-family:var(--mono);font-size:11px;color:var(--acc);letter-spacing:.1em;margin-bottom:.35rem}
+.tl-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:.35rem}
+.tl-body{font-size:13px;color:var(--muted);line-height:1.7;font-family:var(--mono)}
+.tl-badge{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:10px;font-family:var(--mono);padding:.2rem .6rem;
+  border-radius:4px;margin-top:.5rem;font-weight:500;
+}
+.badge-award{background:rgba(48,209,88,0.12);border:1px solid rgba(48,209,88,0.25);color:var(--acc2)}
+.badge-apple{background:rgba(255,255,255,0.07);border:1px solid var(--border);color:var(--muted)}
+.badge-ai{background:rgba(191,90,242,0.12);border:1px solid rgba(191,90,242,0.25);color:var(--acc3)}
+
+/* ─── SKILLS ─── */
+.skills-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.skill-group{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:1.5rem}
+.sg-title{font-size:12px;font-family:var(--mono);color:var(--acc);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+.sg-pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.pill{
+  font-size:12px;font-family:var(--mono);
+  padding:.3rem .75rem;border-radius:4px;
+  background:var(--s2);border:1px solid var(--border);color:var(--muted);
+  transition:all .2s;
+}
+.pill:hover{border-color:rgba(10,132,255,0.4);color:var(--text)}
+
+/* ─── PROJECTS (Featured Work) ─── */
+.project-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+.project-showcase:hover {
+  border-color: rgba(10, 132, 255, 0.4);
+}
+
+@media(min-width: 900px) {
+  .project-showcase {
+    flex-direction: row;
+    align-items: center;
+    padding: 3rem;
+  }
+}
+
+/* 情報エリア */
+.project-info {
+  flex: 1;
+}
+.p-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.p-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.p-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.p-role {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--acc2);
+  letter-spacing: 0.05em;
+  margin-top: 0.3rem;
+}
+.p-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+/* 画像ギャラリーエリア */
+.project-visuals {
+  flex: 1.2;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 350px;
+}
+.app-screen {
+  width: 30%;
+  max-width: 180px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease, z-index 0s;
+  position: relative;
+}
+.app-screen:hover {
+  transform: translateY(-8px) scale(1.05);
+  z-index: 10;
+}
+
+.screen-1 {
+  z-index: 1;
+  transform: rotate(-3deg) translateY(10px);
+}
+.screen-2 {
+  z-index: 2;
+  transform: translateY(-20px);
+  max-width: 200px;
+}
+.screen-3 {
+  z-index: 1;
+  transform: rotate(3deg) translateY(10px);
+}
+
+.screen-1:hover { transform: rotate(0) translateY(-5px) scale(1.05); }
+.screen-2:hover { transform: translateY(-30px) scale(1.05); }
+.screen-3:hover { transform: rotate(0) translateY(-5px) scale(1.05); }
+
+/* ─── AWARDS ─── */
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.award-card{
+  background:var(--s1);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;
+  position:relative;overflow:hidden;
+  transition:border-color .2s,transform .2s;
+}
+.award-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--acc2),var(--acc));
+}
+.award-card:hover{border-color:rgba(48,209,88,0.3);transform:translateY(-2px)}
+.award-title{font-size:16px;font-weight:700;margin-bottom:.4rem;letter-spacing:-.01em}
+.award-event{font-size:13px;color:var(--muted);font-family:var(--mono);margin-bottom:.75rem}
+.award-desc{font-size:12px;color:var(--muted);line-height:1.7;font-family:var(--mono)}
+
+/* ─── CONTACT ─── */
+#contact{text-align:center}
+#contact h2{margin-bottom:.75rem}
+.contact-sub{font-size:14px;color:var(--muted);font-family:var(--mono);margin-bottom:2.5rem;line-height:1.8}
+.contact-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ─── FOOTER ─── */
+footer{
+  padding:1.5rem 2.5rem;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;
+}
+footer span{font-size:12px;font-family:var(--mono);color:var(--muted)}
+
+/* ─── ANIMATIONS ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Manato <span>Ueno</span></div>
+  <ul class="nav-links">
+    <li><a href="#about"    data-en="About"    data-ja="自己紹介">自己紹介</a></li>
+    <li><a href="#timeline" data-en="Timeline" data-ja="タイムライン">タイムライン</a></li>
+    <li><a href="#skills"   data-en="Skills"   data-ja="スキル">スキル</a></li>
+    <li><a href="#projects" data-en="Projects" data-ja="制作物">制作物</a></li>
+    <li><a href="#awards"   data-en="Awards"   data-ja="受賞歴">受賞歴</a></li>
+    <li><a href="#contact"  data-en="Contact"  data-ja="お問い合わせ">お問い合わせ</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn active" data-lang="ja">JA</button>
+    </div>
+    <div class="nav-badge" data-en="Kindai Univ. Scholar" data-ja="近畿大学 特待生">近畿大学 特待生</div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-eyebrow">
+    <span class="hero-dot"></span>
+    <span data-en="iOS Developer &amp; CS Student" data-ja="iOSエンジニア志望 / 情報学部">iOSエンジニア志望 / 情報学部</span>
+  </div>
+  <h1 class="name">
+    <span class="en">Manato Ueno</span>
+    <span class="ja">上野 愛翔</span>
+  </h1>
+  <div class="hero-tags">
+    <span class="htag htag-blue">Swift / iOS</span>
+    <span class="htag htag-green">近畿大学 情報学部</span>
+    <span class="htag htag-purple">Generative AI</span>
+    <span class="htag htag-blue">Apple Ecosystem</span>
+    <span class="htag htag-green">TOEIC 705</span>
+  </div>
+  <p class="hero-sub"
+     data-en="2nd-year Cybersecurity student, Faculty of Informatics, Kindai University.&lt;br&gt;Multiple hackathon wins within just one year of learning to code,&lt;br&gt;now active at international conferences and official Apple events&lt;br&gt;as an aspiring iOS engineer."
+     data-ja="近畿大学 情報学部 サイバーセキュリティコース 2年生。&lt;br&gt;学習開始からわずか1年で複数のハッカソンに入賞し、&lt;br&gt;国際カンファレンス・Apple公式イベントで活動する&lt;br&gt;iOSエンジニア志望の学生エンジニアです。">
+    近畿大学 情報学部 サイバーセキュリティコース 2年生。<br>
+    学習開始からわずか1年で複数のハッカソンに入賞し、<br>
+    国際カンファレンス・Apple公式イベントで活動する<br>
+    iOSエンジニア志望の学生エンジニアです。
+  </p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-blue" data-en="View My Work →" data-ja="開発実績を見る →">開発実績を見る →</a>
+    <a href="#contact" class="btn btn-ghost">Contact</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">3+</span>
+      <span class="stat-label" data-en="hackathons" data-ja="ハッカソン参加">ハッカソン参加</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">2</span>
+      <span class="stat-label" data-en="awards won" data-ja="受賞数">受賞数</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">705</span>
+      <span class="stat-label" data-en="TOEIC score" data-ja="TOEIC スコア">TOEIC スコア</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">92</span>
+      <span class="stat-label" data-en="first-sem GPA" data-ja="前期成績平均">前期成績平均</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="sec-label reveal" data-n="01" data-en="About" data-ja="概要">概要</div>
+  <h2 class="sec-title reveal" data-en="Strengths at a Glance" data-ja="強みの概要">強みの概要</h2>
+  <div class="strengths-grid">
+    <div class="strength-card reveal">
+      <div class="sc-icon">🏆</div>
+      <div class="sc-title">開発 &amp; PM</div>
+      <div class="sc-body">try! Swift学生ハッカソン MIXI特別賞（最年少リーダー）<br>関西ビギナーズハッカソン 企業賞</div>
+    </div>
+    <div class="strength-card reveal">
+      <div class="sc-icon"></div>
+      <div class="sc-title">Apple Ecosystem</div>
+      <div class="sc-body">Swift Student Challenge挑戦<br>Apple on Campus スタッフ<br>AATCE受講中<br>Tim Cook氏との対話経験</div>
+    </div>
+    <div class="strength-card reveal">
+      <div class="sc-icon">🌏</div>
+      <div class="sc-title">グローバル</div>
+      <div class="sc-body">TOEIC 705点<br>各国SSC Winnerと英語で技術交流<br>ユニクロにて日常的英語接客</div>
+    </div>
+    <div class="strength-card reveal">
+      <div class="sc-icon">🎓</div>
+      <div class="sc-title">学業 &amp; コミュニティ</div>
+      <div class="sc-body">近畿大学 特待生認定<br>前期成績平均 92点<br>新入生Bootcamp 技術メンター</div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="sec-label reveal" data-n="02" data-en="Timeline" data-ja="タイムライン">タイムライン</div>
+  <h2 class="sec-title reveal">2025 — 2026</h2>
+  <div class="timeline">
+
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">2025.04</div>
+      <div class="tl-title">近畿大学 情報学部 入学 ／ ユニクロ アルバイト開始</div>
+      <div class="tl-body">外国籍のお客様への英語接客を日常的に担当。</div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot award"></div>
+      <div class="tl-date">2025.07</div>
+      <div class="tl-title">関西ビギナーズハッカソン — 企業賞 受賞</div>
+      <div class="tl-body">学習開始わずか3ヶ月、初対面チームとの1ヶ月開発。<br>車校・バイト・ハッカソン並行で前期GPA 92点。</div>
+      <div><span class="tl-badge badge-award">🏆 企業賞</span></div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">2025.08</div>
+      <div class="tl-title">TOEIC 初受験 650点</div>
+      <div class="tl-body">英語学習の成果を数値で確認。</div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot apple"></div>
+      <div class="tl-date">2025.09</div>
+      <div class="tl-title">Today at Apple（梅田）参加</div>
+      <div class="tl-body">Tim Cook CEOの講演を聴講、日本のSwift Student Challenge Winnerと直接対話。</div>
+      <div><span class="tl-badge badge-apple"> Apple Event</span></div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">2025.12</div>
+      <div class="tl-title">OpenAI × Kindai Hackathon 参加</div>
+      <div class="tl-body">最先端の生成AIをテーマにした開発に挑戦。</div>
+      <div><span class="tl-badge badge-ai">✦ Generative AI</span></div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">2026.01</div>
+      <div class="tl-title">KC3ハッカソン 参加 ／ Apple Japan 招待イベント</div>
+      <div class="tl-body">200人規模の聴衆の前でチームプレゼンを担当。<br>各国SSC Winnerと英語で技術交流。TOEIC 705点。</div>
+      <div><span class="tl-badge badge-apple"> Apple Japan</span></div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">2026.02</div>
+      <div class="tl-title">NICTrain 参加 ／ NVIDIA Student Ambassador Workshop</div>
+      <div class="tl-body">さくらインターネットエンジニアや他大学生と交流。</div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot apple"></div>
+      <div class="tl-date">2026.03</div>
+      <div class="tl-title">Swift Student Challenge 提出 ／ 近畿大学 特待生認定</div>
+      <div class="tl-body">Appleエバンジェリストから「あと一歩、惜しい」との高評価。<br>CyberAgent企業交流会参加。</div>
+      <div><span class="tl-badge badge-apple"> Swift Student Challenge</span></div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot award"></div>
+      <div class="tl-date">2026.04</div>
+      <div class="tl-title">try! Swift 学生ハッカソン — MIXI特別賞 受賞</div>
+      <div class="tl-body">チーム最年少ながらリーダーを務め受賞。<br>新入生Bootcamp 技術メンター。Apple on Campus スタッフ始動。</div>
+      <div>
+        <span class="tl-badge badge-award">🏆 MIXI特別賞</span>
+        <span class="tl-badge badge-apple" style="margin-left:.4rem"> Apple on Campus</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-label reveal" data-n="03" data-en="Skills" data-ja="スキル">スキル</div>
+  <h2 class="sec-title reveal" data-en="Tech &amp; Tools" data-ja="技術・ツール">技術・ツール</h2>
+  <div class="skills-wrap">
+    <div class="skill-group reveal">
+      <div class="sg-title">iOS / Apple</div>
+      <div class="sg-pills">
+        <span class="pill">Swift</span>
+        <span class="pill">SwiftUI</span>
+        <span class="pill">Xcode</span>
+        <span class="pill">AATCE</span>
+        <span class="pill">iOS Dev</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="sg-title">AI / Other</div>
+      <div class="sg-pills">
+        <span class="pill">Generative AI</span>
+        <span class="pill">OpenAI API</span>
+        <span class="pill">Python</span>
+        <span class="pill">Git</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="sg-title">Language</div>
+      <div class="sg-pills">
+        <span class="pill">日本語 (Native)</span>
+        <span class="pill">English (TOEIC 705)</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="sg-title">Soft Skills</div>
+      <div class="sg-pills">
+        <span class="pill">チームリーダー</span>
+        <span class="pill">メンタリング</span>
+        <span class="pill">プレゼン</span>
+        <span class="pill">コミュニティ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-label reveal" data-n="04" data-en="Projects" data-ja="制作物">制作物</div>
+  <h2 class="sec-title reveal" data-en="Featured Work" data-ja="主要プロジェクト">主要プロジェクト</h2>
+
+  <div class="project-showcase reveal">
+
+    <div class="project-info">
+      <div class="p-header">
+        <img src="app_icon.png" alt="SigNinja Icon" class="p-icon">
+        <div>
+          <h3 class="p-title">SigNinja</h3>
+          <p class="p-role">Solo Developer / Swift Student Challenge 2026 Entry</p>
+        </div>
+      </div>
+
+      <p class="p-desc"
+         data-en="An iOS application for intuitively learning Japanese Sign Language (JSL). Built around the concept of lowering the barrier to sign language learning, the app delivers an interactive experience where users physically form signs — framed as a ninja training journey. Powered by the Vision framework for high-accuracy gesture recognition."
+         data-ja="日本手話（JSL）を直感的に学べるiOSアプリケーション。「手話学習のハードルを下げる」をコンセプトに、忍者修行というゲーム感覚で学習できるUI/UXを実装しました。Visionフレームワークによる高精度なジェスチャー認識を取り入れ、ユーザーが実際に手で「印（手話）」を結ぶインタラクティブな学習体験を提供します。">
+        日本手話（JSL）を直感的に学べるiOSアプリケーション。「手話学習のハードルを下げる」をコンセプトに、忍者修行というゲーム感覚で学習できるUI/UXを実装しました。Visionフレームワークによる高精度なジェスチャー認識を取り入れ、ユーザーが実際に手で「印（手話）」を結ぶインタラクティブな学習体験を提供します。
+      </p>
+
+      <div class="sg-pills" style="margin-bottom: 2rem;">
+        <span class="pill">SwiftUI</span>
+        <span class="pill">Vision Framework</span>
+        <span class="pill">CoreML</span>
+        <span class="pill">AVFoundation</span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-blue" data-en="Ask for Details ↗" data-ja="詳細を聞く ↗">詳細を聞く ↗</a>
+        <a href="#" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-visuals">
+      <img src="start.png" alt="SigNinja Start Screen" class="app-screen screen-1">
+      <img src="sign.png" alt="SigNinja Hand Sign Detection" class="app-screen screen-2">
+      <img src="collections.png" alt="SigNinja Scroll Collection" class="app-screen screen-3">
+    </div>
+
+  </div>
+</section>
+
+<section id="awards">
+  <div class="sec-label reveal" data-n="05" data-en="Awards" data-ja="受賞歴">受賞歴</div>
+  <h2 class="sec-title reveal" data-en="Highlights" data-ja="主な実績">主な実績</h2>
+  <div class="awards-grid">
+    <div class="award-card reveal">
+      <div class="award-title">MIXI特別賞</div>
+      <div class="award-event">try! Swift 学生ハッカソン — 2026.04</div>
+      <div class="award-desc">チーム最年少ながらリーダーを務め、国際カンファレンス併設のハッカソンで受賞。LINE Yahoo ヤマケン氏よりメンター承諾を獲得。</div>
+    </div>
+    <div class="award-card reveal">
+      <div class="award-title">企業賞</div>
+      <div class="award-event">関西ビギナーズハッカソン — 2025.07</div>
+      <div class="award-desc">プログラミング学習開始わずか3ヶ月。初対面メンバーとの1ヶ月チーム開発で結果を出した。</div>
+    </div>
+    <div class="award-card reveal">
+      <div class="award-title">特待生認定（Tokutaisei）</div>
+      <div class="award-event">近畿大学 — 2026.03</div>
+      <div class="award-desc">前期成績平均92点。車校・アルバイト・ハッカソンを並行しながら優秀な学業成績を維持。</div>
+    </div>
+    <div class="award-card reveal">
+      <div class="award-title">Swift Student Challenge</div>
+      <div class="award-event">Apple — 2026.03</div>
+      <div class="award-desc">自作iOSアプリを世界規模のコンペに提出。Appleエバンジェリストから「あと一歩、惜しい」と高評価。</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec-label reveal" style="justify-content:center" data-n="06" data-en="Contact" data-ja="連絡先">連絡先</div>
+  <h2 class="sec-title reveal" data-en="Let's Connect" data-ja="お問い合わせ">お問い合わせ</h2>
+  <p class="contact-sub reveal"
+     data-en="For internships, collaborations, or tech discussions —&lt;br&gt;feel free to reach out."
+     data-ja="インターンシップ・共同開発・技術交流など&lt;br&gt;お気軽にご連絡ください。">
+    インターンシップ・共同開発・技術交流など<br>
+    お気軽にご連絡ください。
+  </p>
+  <div class="contact-row reveal">
+    <a href="mailto:your@email.com" class="btn btn-blue" data-en="Send Email" data-ja="メールを送る">メールを送る</a>
+    <a href="#" class="btn btn-ghost">GitHub</a>
+    <a href="#" class="btn btn-ghost">X (Twitter)</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Manato Ueno — 上野 愛翔</span>
+  <span>近畿大学 情報学部 情報学科 サイバーセキュリティコース</span>
+</footer>
+
+<script>
+// ─── SCROLL REVEAL ───
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('on'), i*80);
+  });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ─── LANGUAGE TOGGLE ───
+(function(){
+  const STORAGE_KEY = 'portfolio-lang';
+
+  function applyLang(lang) {
+    // Swap all data-en / data-ja text nodes
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const val = el.dataset[lang];
+      if (val !== undefined) el.innerHTML = val;
+    });
+
+    // Update toggle button states
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    document.documentElement.lang = lang;
+    localStorage.setItem(STORAGE_KEY, lang);
+  }
+
+  // Wire up buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  // Restore saved preference, default to 'ja'
+  applyLang(localStorage.getItem(STORAGE_KEY) || 'ja');
+})();
+</script>
+</body>
+</html>
