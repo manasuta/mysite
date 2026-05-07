@@ -2,22 +2,42 @@
 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
-/* ── Render: Timeline ── */
+/* ── Render: Timeline (flat list) ── */
 function renderTimeline(){
   const c = document.querySelector('.timeline'); if(!c) return;
-  c.innerHTML = PORTFOLIO_DATA.timeline.map(it=>{
-    const dotCls = it.dot!=='default' ? ` ${it.dot}` : '';
-    const badges = it.badges.length
-      ? `<div class="tl-badges">${it.badges.map(b=>`<span class="tl-badge badge-${b.type}">${b.text}</span>`).join('')}</div>`
-      : '';
-    return `<div class="tl-item reveal">
-      <div class="tl-dot${dotCls}"></div>
-      <div class="tl-date">${it.date}</div>
-      <div class="tl-title" data-en="${esc(it.title.en)}" data-ja="${esc(it.title.ja)}">${it.title.ja}</div>
-      <div class="tl-body"  data-en="${esc(it.body.en)}"  data-ja="${esc(it.body.ja)}">${it.body.ja}</div>
-      ${badges}
-    </div>`;
-  }).join('');
+
+  // attr-safe escape: keeps <> for innerHTML but escapes " for attributes
+  function ea(s){ return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;'); }
+
+  let html = '<ul class="tl-list">';
+  let lastYear = null;
+
+  PORTFOLIO_DATA.timeline.forEach(it => {
+    const year    = it.date.slice(0,4);
+    const month   = it.date.slice(5,7) + '月';
+    const isAward = it.dot !== 'default';
+    const sja     = it.short ? it.short.ja : it.title.ja;
+    const sen     = it.short ? it.short.en : it.title.en;
+
+    if (year !== lastYear) {
+      html += `<li class="tl-year">${year}</li>`;
+      lastYear = year;
+    }
+
+    const badge = it.badges.find(b => b.type !== 'ai');
+    const badgeHtml = badge
+      ? `<span class="tl-row-badge b-${badge.type === 'award' ? 'award' : 'apple'}">${badge.text}</span>`
+      : '<span></span>';
+
+    html += `<li class="tl-row${isAward ? ' is-award' : ''}">
+      <span class="tl-row-date">${month}</span>
+      <span class="tl-row-text" data-ja="${ea(sja)}" data-en="${ea(sen)}">${sja}</span>
+      ${badgeHtml}
+    </li>`;
+  });
+
+  html += '</ul>';
+  c.innerHTML = html;
 }
 
 /* ── Render: Strengths ── */
@@ -59,7 +79,6 @@ function setupAura(){
     <div class="ca-layer ca-outer"></div>
     <div class="ca-layer ca-mid"></div>
     <div class="ca-layer ca-ring"></div>
-    <div class="ca-layer ca-ripple"></div>
     <div class="ca-layer ca-core"></div>`;
   document.body.appendChild(aura);
 
@@ -67,7 +86,6 @@ function setupAura(){
   const outer  = aura.querySelector('.ca-outer');
   const mid    = aura.querySelector('.ca-mid');
   const ring   = aura.querySelector('.ca-ring');
-  const ripple = aura.querySelector('.ca-ripple');
   const core   = aura.querySelector('.ca-core');
   let raf=null;
 
@@ -80,8 +98,6 @@ function setupAura(){
     mid.style.top     = `${50+(ny-oy)*0.25}%`;
     ring.style.left   = `${50+(cx-ox)*0.4}%`;
     ring.style.top    = `${50+(cy-oy)*0.4}%`;
-    ripple.style.left = ring.style.left;
-    ripple.style.top  = ring.style.top;
     core.style.left   = `${50+(cx-ox)*0.5}%`;
     core.style.top    = `${50+(cy-oy)*0.5}%`;
     if(Math.hypot(mx-ox,my-oy)>0.4||Math.hypot(mx-cx,my-cy)>0.4){ raf=requestAnimationFrame(tick); } else { raf=null; }
@@ -94,8 +110,6 @@ function setupAura(){
   const isInteractive = el=> el&&el.closest&&el.closest('a,button,.strength,.tl-item,.vision-card,.case,.proj-card,.award-card,.pill,.lang-btn,.nav-links a');
   document.addEventListener('mouseover', e=>{ if(isInteractive(e.target)) aura.classList.add('is-hover'); });
   document.addEventListener('mouseout',  e=>{ if(isInteractive(e.target)&&!isInteractive(e.relatedTarget)) aura.classList.remove('is-hover'); });
-  document.addEventListener('mousedown', ()=>{ aura.classList.remove('is-click'); void aura.offsetWidth; aura.classList.add('is-click'); });
-  aura.addEventListener('animationend', ()=>aura.classList.remove('is-click'), true);
 }
 
 /* ── Scroll reveal ── */
@@ -585,6 +599,15 @@ struct TaskRow: View {
   update(); // initialize immediately on load
 })();
 
+/* ── Global Aurora: inject secondary orb ── */
+(function () {
+  if (document.querySelector('.hero-glow2')) return;
+  const el = document.createElement('div');
+  el.className = 'hero-glow2';
+  el.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(el);
+})();
+
 /* ── Ambient Data Dust (Canvas Parallax) ── */
 function setupDataDust() {
   // スマホなど処理を軽くしたい場合はスキップ（好みで外してもOK）
@@ -663,3 +686,215 @@ function setupDataDust() {
 
 // 実行
 setupDataDust();
+
+/* ── Physics Water Simulation (2D wave equation) ── */
+function setupPhysicsWater() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const cv = document.createElement('canvas');
+  cv.style.cssText = 'position:fixed;top:0;left:0;z-index:0;pointer-events:none;';
+  document.body.appendChild(cv);
+  const ctx = cv.getContext('2d');
+
+  const oc  = document.createElement('canvas');
+  const oct = oc.getContext('2d', { willReadFrequently: true });
+
+  const SCALE = 3;
+  const DAMP  = 0.99;
+
+  let W, H, SW, SH;
+  let cur, prv, img, px;
+  let lastScrollY = window.scrollY;
+
+  function resize() {
+    W  = cv.width  = window.innerWidth;
+    H  = cv.height = window.innerHeight;
+    SW = Math.ceil(W / SCALE) | 0;
+    SH = Math.ceil(H / SCALE) | 0;
+    oc.width  = SW;
+    oc.height = SH;
+    cur = new Float32Array(SW * SH);
+    prv = new Float32Array(SW * SH);
+    img = oct.createImageData(SW, SH);
+    px  = img.data;
+    lastScrollY = window.scrollY;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function step() {
+    for (let y = 1; y < SH - 1; y++) {
+      for (let x = 1; x < SW - 1; x++) {
+        const i = y * SW + x;
+        const v = (prv[i-1] + prv[i+1] + prv[i-SW] + prv[i+SW]) * 0.5 - cur[i];
+        cur[i] = v * DAMP;
+      }
+    }
+    const tmp = cur; cur = prv; prv = tmp;
+  }
+
+  function draw() {
+    for (let i = 0, n = SW * SH * 4; i < n; i++) px[i] = 0;
+
+    for (let y = 1; y < SH - 1; y++) {
+      for (let x = 1; x < SW - 1; x++) {
+        const i  = y * SW + x;
+        const gx = prv[i + 1]  - prv[i - 1];
+        const gy = prv[i + SW] - prv[i - SW];
+
+        if (Math.abs(gx) < 0.05 && Math.abs(gy) < 0.05) continue;
+
+        const p   = i << 2;
+        const dot = gx * (-0.25) + gy * (-0.25);
+
+        if (dot > 0) {
+          px[p]   = 230;
+          px[p+1] = 240;
+          px[p+2] = 255;
+          px[p+3] = Math.min(25, dot * 45) | 0;
+        } else {
+          px[p]   = 0;
+          px[p+1] = 5;
+          px[p+2] = 15;
+          px[p+3] = Math.min(12, -dot * 25) | 0;
+        }
+      }
+    }
+
+    oct.putImageData(img, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    ctx.drawImage(oc, 0, 0, W, H);
+  }
+
+  function loop() {
+    // スクロール量に応じて波バッファをシフト
+    const currentScroll = window.scrollY;
+    const deltaScroll   = currentScroll - lastScrollY;
+    const shiftY        = Math.round(deltaScroll / SCALE);
+
+    if (shiftY !== 0) {
+      const shiftCells = shiftY * SW;
+      if (shiftY > 0) {
+        if (shiftCells < cur.length) {
+          cur.copyWithin(0, shiftCells); prv.copyWithin(0, shiftCells);
+          cur.fill(0, cur.length - shiftCells);
+          prv.fill(0, prv.length - shiftCells);
+        } else { cur.fill(0); prv.fill(0); }
+      } else {
+        const abs = -shiftCells;
+        if (abs < cur.length) {
+          cur.copyWithin(abs, 0); prv.copyWithin(abs, 0);
+          cur.fill(0, 0, abs);   prv.fill(0, 0, abs);
+        } else { cur.fill(0); prv.fill(0); }
+      }
+      lastScrollY += shiftY * SCALE;
+    }
+
+    step();
+    draw();
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+
+  function addWave(clientX, clientY, radius, strength) {
+    const cx = (clientX / SCALE) | 0;
+    const cy = (clientY / SCALE) | 0;
+    const r  = Math.max(1, (radius / SCALE) | 0);
+    for (let dy = -r; dy <= r; dy++) {
+      for (let dx = -r; dx <= r; dx++) {
+        const d2 = dx*dx + dy*dy;
+        if (d2 > r*r) continue;
+        const nx = cx+dx, ny = cy+dy;
+        if (nx < 1 || nx >= SW-1 || ny < 1 || ny >= SH-1) continue;
+        const t  = 1 - Math.sqrt(d2) / r;
+        const ii = ny * SW + nx;
+        prv[ii] += strength * t;
+        cur[ii] -= strength * t * 0.5;
+      }
+    }
+  }
+
+  let active = false;
+  document.addEventListener('pointerdown', e => {
+    active = true;
+    addWave(e.clientX, e.clientY, 9, 20);
+  });
+  document.addEventListener('pointermove', e => {
+    if (active) addWave(e.clientX, e.clientY, 5, 6);
+  });
+  document.addEventListener('pointerup',     () => { active = false; });
+  document.addEventListener('pointercancel', () => { active = false; });
+}
+
+setupPhysicsWater();
+
+
+/* ────────────────────────────────────────────────
+   AWARD TEXT MAGNETIC ZOOM
+──────────────────────────────────────────────── */
+function setupAwardTextZoom() {
+  if (matchMedia('(pointer: coarse)').matches) return;
+
+  const RADIUS = 85, MAX_SCALE = 1.55;
+
+  function wrapUnits(el) {
+    const isJa = document.documentElement.lang !== 'en';
+    const text  = el.textContent || '';
+    if (!text.trim()) return;
+    el.innerHTML = isJa
+      ? [...text].map(ch => ch.trim()
+          ? `<span class="zoom-unit">${ch}</span>`
+          : ch).join('')
+      : text.split(/(\s+)/).map(t =>
+          /\S/.test(t) ? `<span class="zoom-unit">${t}</span>` : t
+        ).join('');
+  }
+
+  const allCards = [];
+
+  document.querySelectorAll('.award-card').forEach(card => {
+    const targets = [...card.querySelectorAll('.award-title, .award-event')];
+    targets.forEach(wrapUnits);
+
+    let units = [...card.querySelectorAll('.zoom-unit')];
+
+    let ticking = false, lastE = null;
+
+    card.addEventListener('mousemove', e => {
+      lastE = e;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        if (!lastE) { ticking = false; return; }
+        const ev = lastE; lastE = null; ticking = false;
+        units.forEach(u => {
+          const r = u.getBoundingClientRect();
+          const d = Math.hypot(ev.clientX - r.left - r.width/2,
+                               ev.clientY - r.top  - r.height/2);
+          const t = Math.max(0, 1 - d / RADIUS);
+          u.style.setProperty('--zs', (1 + (MAX_SCALE-1)*t*t).toFixed(3));
+        });
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      units.forEach(u => u.style.setProperty('--zs','1'));
+    });
+
+    allCards.push({ targets, refresh: () => { units = [...card.querySelectorAll('.zoom-unit')]; } });
+  });
+
+  // 言語切り替え後に再ラップ
+  document.querySelectorAll('.lang-btn').forEach(btn =>
+    btn.addEventListener('click', () =>
+      requestAnimationFrame(() => {
+        allCards.forEach(({ targets, refresh }) => {
+          targets.forEach(wrapUnits);
+          refresh();
+        });
+      })
+    )
+  );
+}
+
+setupAwardTextZoom();

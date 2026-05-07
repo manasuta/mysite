@@ -60,11 +60,24 @@
       <span data-en="UI · UX · Apple Ecosystem" data-ja="UI・UX・Appleエコシステム">UI・UX・Appleエコシステム</span>
     </p>
 
-    <p class="hero-sub"
-       data-en="2nd-year Cybersecurity student at Kindai University. One year in: 2 hackathon awards, a Swift Student Challenge submission praised by an Apple Evangelist, a conversation with Tim Cook, and a role as Apple on Campus staff — all while scoring 92/100 (GPA 3.55) every semester."
-       data-ja="近畿大学 情報学部 サイバーセキュリティコース2年。学習開始から1年で、ハッカソン2冠・Swift Student Challenge エバンジェリスト高評価・Tim Cook氏との対話・Apple on Campusスタッフ就任を達成。成績平均92点（GPA 3.55）も維持しながら、UIとUXの「作り込み」に徹底してこだわるiOSエンジニアです。">
-      近畿大学 情報学部 サイバーセキュリティコース2年。学習開始から1年で、ハッカソン2冠・Swift Student Challenge エバンジェリスト高評価・Tim Cook氏との対話・Apple on Campusスタッフ就任を達成。成績平均92点（GPA 3.55）も維持しながら、UIとUXの「作り込み」に徹底してこだわるiOSエンジニアです。
-    </p>
+    <div class="story-hero">
+      <div class="story-kicker"
+           data-en="1 year · from zero"
+           data-ja="1年 · ゼロから">1年 · ゼロから</div>
+      <div class="story-contrast"
+           data-ja='<span class="zero">2025年4月 — Swiftを書いたことがなかった。</span><span class="one">2026年4月 — <span class="span-good">MIXI特別賞。</span><span class="span-accent"> Apple on Campus。</span>特待生。</span>'
+           data-en='<span class="zero">April 2025 — Didn&apos;t know what programming was.</span><span class="one">April 2026 — <span class="span-good">MIXI Special Award. </span><span class="span-accent">Apple on Campus. </span>Honor Student.</span>'>
+        <span class="zero">2025年4月 — Swiftを書いたことがなかった。</span>
+        <span class="one">2026年4月 — <span class="span-good">MIXI特別賞。</span><span class="span-accent"> Apple on Campus。</span>特待生。</span>
+      </div>
+      <div class="story-divider"></div>
+      <p class="story-why"
+         data-ja="ハッカソン4本、カンファレンス5本、Tim Cookの講演。<br><strong>全部、学習開始から12ヶ月以内の話です。</strong>"
+         data-en="4 hackathons, 5 conferences, a conversation with Tim Cook.<br><strong>All within 12 months of writing the first line of code.</strong>">
+        ハッカソン4本、カンファレンス5本、Tim Cookの講演。<br>
+        <strong>全部、学習開始から12ヶ月以内の話です。</strong>
+      </p>
+    </div>
 
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary" data-en="See My Work →" data-ja="制作物を見る →">制作物を見る →</a>
@@ -99,6 +112,11 @@
       <span class="hm-sep">→</span>
     </div>
   </div>
+
+  <!-- スクロールインジケーター -->
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span class="hs-line"></span>
+  </div>
 </section>
 
 <!-- ── ABOUT ── -->
@@ -108,7 +126,7 @@
     <span class="mac-wintitle" data-en="About" data-ja="自己紹介">自己紹介</span>
   </div>
   <div class="sec-head">
-    <div class="sec-eyebrow"><span class="line"></span><span class="num">01</span><span data-en="About" data-ja="自己紹介">自己紹介</span></div>
+
     <h2 class="sec-title reveal" data-en="Engineer at the intersection of craft, ecosystem, and global." data-ja="作り込み・エコシステム・グローバル — その交点で開発する。">作り込み・エコシステム・グローバル — その交点で開発する。</h2>
     <p class="sec-lede reveal"
        data-en="A snapshot of what I bring to a team."
@@ -119,16 +137,8 @@
 
 <!-- ── TIMELINE ── -->
 <section id="timeline">
-  <div class="mac-bar" aria-hidden="true">
-    <span class="mac-dot r"></span><span class="mac-dot y"></span><span class="mac-dot g"></span>
-    <span class="mac-wintitle" data-en="Timeline" data-ja="タイムライン">タイムライン</span>
-  </div>
   <div class="sec-head">
-    <div class="sec-eyebrow"><span class="line"></span><span class="num">02</span><span data-en="Timeline" data-ja="タイムライン">タイムライン</span></div>
     <h2 class="sec-title reveal">2025 — 2026</h2>
-    <p class="sec-lede reveal"
-       data-en="One year, end-to-end. From writing my first Swift line to leading an international team."
-       data-ja="最初のSwiftコードから、国際チームのリーダーまで。学習開始からの1年間。">最初のSwiftコードから、国際チームのリーダーまで。学習開始からの1年間。</p>
   </div>
   <div class="timeline"></div>
 </section>
@@ -140,7 +150,6 @@
     <span class="mac-wintitle" data-en="Skills" data-ja="スキル">スキル</span>
   </div>
   <div class="sec-head">
-    <div class="sec-eyebrow"><span class="line"></span><span class="num">03</span><span data-en="Skills" data-ja="スキル">スキル</span></div>
     <h2 class="sec-title reveal" data-en="Tools I reach for." data-ja="日常的に使う技術スタック。">日常的に使う技術スタック。</h2>
   </div>
   <div class="skills">
@@ -193,7 +202,6 @@
     <span class="mac-wintitle" data-en="Work" data-ja="制作物">制作物</span>
   </div>
   <div class="sec-head">
-    <div class="sec-eyebrow"><span class="line"></span><span class="num">04</span><span data-en="Selected Work" data-ja="主要プロジェクト">主要プロジェクト</span></div>
     <h2 class="sec-title reveal" data-en="Three apps. One thesis: UX wins." data-ja="3つのアプリ、1つの結論 — UXが勝つ。">3つのアプリ、1つの結論 — UXが勝つ。</h2>
   </div>
 
@@ -228,17 +236,97 @@
       </div>
     </div>
 
-    <div class="case-visuals">
-      <div class="phone-mini p1">
-        <div class="screen"><div class="island"></div><img src="assets/images/start.png" alt="Start screen"></div>
+    <!-- ── SigNinja · Holographic FUI Display ── -->
+    <div class="fui-field" aria-label="SigNinja holographic display">
+
+      <!-- Perspective grid floor -->
+      <div class="fui-floor" aria-hidden="true"><div class="fui-floor-glow"></div></div>
+
+      <!-- Field corner brackets -->
+      <span class="fui-cb fui-cb-tl" aria-hidden="true"></span>
+      <span class="fui-cb fui-cb-tr" aria-hidden="true"></span>
+      <span class="fui-cb fui-cb-bl" aria-hidden="true"></span>
+      <span class="fui-cb fui-cb-br" aria-hidden="true"></span>
+
+      <!-- HUD: rotating dual-ring status wheel -->
+      <div class="fui-widget fui-status-ring" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="34" class="fui-ring-track"/>
+          <circle cx="40" cy="40" r="34" class="fui-ring-arc fui-ring-spin"   stroke-dasharray="120 214"/>
+          <circle cx="40" cy="40" r="24" class="fui-ring-track fui-ring-track-i"/>
+          <circle cx="40" cy="40" r="24" class="fui-ring-arc fui-ring-arc-i fui-ring-counter" stroke-dasharray="72 151" stroke-dashoffset="-18"/>
+          <circle cx="40" cy="40" r="3"  class="fui-ring-core"/>
+          <line x1="40" y1="5"  x2="40" y2="11" class="fui-tick"/>
+          <line x1="75" y1="40" x2="69" y2="40" class="fui-tick"/>
+          <line x1="40" y1="75" x2="40" y2="69" class="fui-tick"/>
+          <line x1="5"  y1="40" x2="11" y2="40" class="fui-tick"/>
+        </svg>
+        <div class="fui-widget-lbl">CONF</div>
+        <div class="fui-widget-val">94%</div>
       </div>
-      <div class="phone-mini p2">
-        <div class="screen"><div class="island"></div><img src="assets/images/sign.png" alt="Sign detection"></div>
+
+      <!-- HUD: data readout panel -->
+      <div class="fui-widget fui-readout" aria-hidden="true">
+        <div class="fui-readout-title">VISION · ANALYSIS</div>
+        <div class="fui-readout-row"><span class="fui-rk">HAND_POSE</span><span class="fui-rv">96.2%</span></div>
+        <div class="fui-readout-row"><span class="fui-rk">LATENCY</span><span class="fui-rv">12ms</span></div>
+        <div class="fui-readout-row"><span class="fui-rk">MODEL</span><span class="fui-rv">V2.3</span></div>
+        <div class="fui-readout-row fui-readout-live"><span class="fui-rk">STATUS</span><span class="fui-rv">● LIVE</span></div>
       </div>
-      <div class="phone-mini p3">
-        <div class="screen"><div class="island"></div><img src="assets/images/collections.png" alt="Collections"></div>
-      </div>
-    </div>
+
+      <!-- Three floating holographic screens -->
+      <div class="fui-screens">
+
+        <!-- Left: start / onboarding -->
+        <div class="fui-screen fui-screen-side fui-screen-left">
+          <div class="fui-sfr">
+            <div class="fui-shead"><span class="fui-sbadge">INIT</span></div>
+            <img src="assets/images/start.png" alt="SigNinja start screen">
+            <div class="fui-sfoot"><span class="fui-sdot"></span><span>UI / ONBOARD</span></div>
+          </div>
+        </div>
+
+        <!-- Center: hand sign detection — MAIN -->
+        <div class="fui-screen fui-screen-main fui-screen-center">
+          <div class="fui-sfr">
+            <div class="fui-shead">
+              <span class="fui-sbadge fui-sbadge-live">ANALYSIS</span>
+              <span class="fui-cursor-blink">▮</span>
+            </div>
+            <div class="fui-img-wrap">
+              <img src="assets/images/sign.png" alt="Hand sign detection active">
+              <div class="fui-scanline"   aria-hidden="true"></div>
+              <div class="fui-reticle"    aria-hidden="true">
+                <span class="fui-rc fui-rc-tl"></span>
+                <span class="fui-rc fui-rc-tr"></span>
+                <span class="fui-rc fui-rc-bl"></span>
+                <span class="fui-rc fui-rc-br"></span>
+                <span class="fui-crossh"  aria-hidden="true"></span>
+                <span class="fui-crossv"  aria-hidden="true"></span>
+              </div>
+              <div class="fui-dots-layer" aria-hidden="true"></div>
+            </div>
+            <div class="fui-sfoot fui-sfoot-bars">
+              <div class="fui-bar-group">
+                <div class="fui-bar-item"><div class="fui-bar-track"><div class="fui-bar-fill" style="--pct:82%"></div></div><span class="fui-bar-lbl">HAND</span></div>
+                <div class="fui-bar-item"><div class="fui-bar-track"><div class="fui-bar-fill" style="--pct:94%"></div></div><span class="fui-bar-lbl">POSE</span></div>
+                <div class="fui-bar-item"><div class="fui-bar-track"><div class="fui-bar-fill" style="--pct:78%"></div></div><span class="fui-bar-lbl">SIGN</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: collections -->
+        <div class="fui-screen fui-screen-side fui-screen-right">
+          <div class="fui-sfr">
+            <div class="fui-shead"><span class="fui-sbadge">SIGNS</span></div>
+            <img src="assets/images/collections.png" alt="Sign collections">
+            <div class="fui-sfoot"><span class="fui-sdot"></span><span>48 SIGNS</span></div>
+          </div>
+        </div>
+
+      </div><!-- /.fui-screens -->
+    </div><!-- /.fui-field -->
   </article>
 
   <!-- まんがる -->
@@ -251,34 +339,40 @@
       <span class="case-award">🏆 MIXI 特別賞</span>
     </div>
 
-    <div class="case-visuals mangaru-visual">
-      <div class="phone-mini contain p2" style="width:220px;">
-        <div class="screen"><div class="island"></div><img src="assets/images/mangaru.jpg" alt="まんがる 生成画面"></div>
+    <div class="mangaru-layout">
+
+      <div class="mangaru-text">
+        <p class="case-tagline"
+           data-en="&ldquo;Turn everyday moments into shared laughter.&rdquo;"
+           data-ja="「日常の何気ない行動を、最高のコミュニケーションの場に変える。」">「日常の何気ない行動を、最高のコミュニケーションの場に変える。」</p>
+
+        <p class="case-desc"
+           data-en="An iOS app that transforms a friend's pose into a manga panel using generative AI. Vision crops the subject, the app composites a manga-style background, and AI writes a perfectly absurd speech bubble — all in seconds, designed for shared laughter."
+           data-ja="iPhoneで撮影した友人のポーズを、生成AIが漫画のワンシーンに変えるiOSアプリ。Visionで人物を切り抜き、漫画風背景を合成し、ポーズに合った絶妙なセリフをAIが生成。残ったその場で笑い合う体験を、数秒で。">iPhoneで撮影した友人のポーズを、生成AIが漫画のワンシーンに変えるiOSアプリ。Visionで人物を切り抜き、漫画風背景を合成し、ポーズに合った絶妙なセリフをAIが生成。残ったその場で笑い合う体験を、数秒で。</p>
+
+        <div class="pills" style="margin-bottom:1.25rem;">
+          <span class="pill primary">SwiftUI</span>
+          <span class="pill primary">Vision</span>
+          <span class="pill primary">OpenAI API</span>
+          <span class="pill">CoreImage</span>
+        </div>
+
+        <div class="insight">
+          <div class="insight-label" data-en="PM Decision" data-ja="PMの意思決定">PMの意思決定</div>
+          <p data-en="Mid-hackathon, the team locked into complex AR camera work — development stalled. I called it: <strong>users don't want cutting-edge AR, they want laughter.</strong> Pivoted to 2D image compositing — lower technical risk, dramatically higher UX payoff. That single decision won the MIXI Special Award."
+             data-ja="開発中盤、チームはAR技術の実装に固執し難航していた。私は判断を下した。「<strong>ユーザーが求めるのは高度な技術ではなく、直感的なUXと笑いだ。</strong>」ARを捨て、実装リスクの低い2D画像切り抜き＋AI合成へ大胆にピボット。技術より体験を優先したこの決断が、MIXI特別賞獲得に直結した。">開発中盤、チームはAR技術の実装に固執し難航していた。私は判断を下した。「<strong>ユーザーが求めるのは高度な技術ではなく、直感的なUXと笑いだ。</strong>」ARを捨て、実装リスクの低い2D画像切り抜き＋AI合成へ大胆にピボット。技術より体験を優先したこの決断が、MIXI特別賞獲得に直結した。</p>
+        </div>
       </div>
-    </div>
 
-    <p class="case-tagline"
-       data-en="&ldquo;Turn everyday moments into shared laughter.&rdquo;"
-       data-ja="「日常の何気ない行動を、最高のコミュニケーションの場に変える。」">「日常の何気ない行動を、最高のコミュニケーションの場に変える。」</p>
+      <div class="case-visuals mangaru-visual">
+        <div class="phone-mini contain p2" style="width:220px;">
+          <div class="screen"><div class="island"></div><img src="assets/images/mangaru.jpg" alt="まんがる 生成画面"></div>
+        </div>
+      </div>
 
-    <p class="case-desc"
-       data-en="An iOS app that transforms a friend's pose into a manga panel using generative AI. Vision crops the subject, the app composites a manga-style background, and AI writes a perfectly absurd speech bubble — all in seconds, designed for shared laughter."
-       data-ja="iPhoneで撮影した友人のポーズを、生成AIが漫画のワンシーンに変えるiOSアプリ。Visionで人物を切り抜き、漫画風背景を合成し、ポーズに合った絶妙なセリフをAIが生成。残ったその場で笑い合う体験を、数秒で。">iPhoneで撮影した友人のポーズを、生成AIが漫画のワンシーンに変えるiOSアプリ。Visionで人物を切り抜き、漫画風背景を合成し、ポーズに合った絶妙なセリフをAIが生成。残ったその場で笑い合う体験を、数秒で。</p>
+    </div><!-- /.mangaru-layout -->
 
-    <div class="pills" style="margin-bottom:1.25rem;">
-      <span class="pill primary">SwiftUI</span>
-      <span class="pill primary">Vision</span>
-      <span class="pill primary">OpenAI API</span>
-      <span class="pill">CoreImage</span>
-    </div>
-
-    <div class="insight">
-      <div class="insight-label" data-en="PM Decision" data-ja="PMの意思決定">PMの意思決定</div>
-      <p data-en="Mid-hackathon, the team locked into complex AR camera work — development stalled. I called it: <strong>users don't want cutting-edge AR, they want laughter.</strong> Pivoted to 2D image compositing — lower technical risk, dramatically higher UX payoff. That single decision won the MIXI Special Award."
-         data-ja="開発中盤、チームはAR技術の実装に固執し難航していた。私は判断を下した。「<strong>ユーザーが求めるのは高度な技術ではなく、直感的なUXと笑いだ。</strong>」ARを捨て、実装リスクの低い2D画像切り抜き＋AI合成へ大胆にピボット。技術より体験を優先したこの決断が、MIXI特別賞獲得に直結した。">開発中盤、チームはAR技術の実装に固執し難航していた。私は判断を下した。「<strong>ユーザーが求めるのは高度な技術ではなく、直感的なUXと笑いだ。</strong>」ARを捨て、実装リスクの低い2D画像切り抜き＋AI合成へ大胆にピボット。技術より体験を優先したこの決断が、MIXI特別賞獲得に直結した。</p>
-    </div>
-
-    <div class="insight-label" data-en="Core UX Flow" data-ja="コアUXフロー" style="margin-top:1.5rem;">コアUXフロー</div>
+    <div class="insight-label" data-en="Core UX Flow" data-ja="コアUXフロー" style="margin-top:2.5rem;">コアUXフロー</div>
     <div class="ux-flow">
       <div class="ux-step">
         <div class="ux-num">STEP 01</div>
@@ -467,7 +561,6 @@
     <span class="mac-wintitle" data-en="Now" data-ja="現在">現在</span>
   </div>
   <div class="sec-head">
-    <div class="sec-eyebrow"><span class="line"></span><span class="num">05</span><span data-en="Now" data-ja="現在">現在</span></div>
     <h2 class="sec-title reveal" data-en="Currently working on." data-ja="今、取り組んでいること。">今、取り組んでいること。</h2>
     <p class="sec-lede reveal"
        data-en="Five threads, all aimed at the same goal — being ready when the right opportunity opens."
@@ -479,7 +572,6 @@
 <!-- ── AWARDS ── -->
 <section id="awards">
   <div class="sec-head">
-    <div class="sec-eyebrow"><span class="line"></span><span class="num">06</span><span data-en="Awards" data-ja="受賞">受賞</span></div>
     <h2 class="sec-title reveal" data-en="Highlights." data-ja="主な実績。">主な実績。</h2>
   </div>
   <div class="awards">
@@ -517,7 +609,6 @@
 <!-- ── CONTACT ── -->
 <section id="contact">
   <div class="sec-head">
-    <div class="sec-eyebrow"><span class="line"></span><span class="num">07</span><span data-en="Contact" data-ja="連絡先">連絡先</span></div>
     <h2 class="sec-title reveal" data-en="Let's build something." data-ja="一緒に何か作りましょう。">一緒に何か作りましょう。</h2>
     <p class="sec-lede reveal"
        data-en="Open to internships, collaborations, and tech conversations. I reply within a day."
