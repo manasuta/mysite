@@ -744,13 +744,25 @@ body[data-section="contact"]  { --glow-c1: rgba( 94,155,255,0.13); --glow-r: 260
 
   .nav-links {
     display: none;
-    position: fixed; inset: 0; top: 55px;
-    flex-direction: column; align-items: center; justify-content: center;
-    gap: 1.25rem; z-index: 199;
-    background: rgba(8,9,12,0.97);
-    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 100dvh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 3.5rem;
+    gap: 1.5rem;
+    background: rgba(8, 9, 12, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid var(--line);
   }
-  .nav-links.mob-open { display: flex; }
+  .nav-links.mob-open {
+    display: flex;
+    animation: menuFadeIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
   .nav-links li { list-style: none; }
   .nav-links a { font-size: 18px; padding: .8rem 2.5rem; border-radius: 12px; display: block; }
 
@@ -1217,4 +1229,9 @@ body[data-section="contact"]  { --glow-c1: rgba( 94,155,255,0.13); --glow-r: 260
   .fui-scanline, .fui-screen-center, .fui-screen-left, .fui-screen-right,
   .fui-ring-spin, .fui-ring-counter, .fui-dots-layer,
   .fui-sbadge-live, .fui-cursor-blink, .fui-sdot, .fui-readout-live .fui-rv { animation:none; }
+}
+
+@keyframes menuFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
