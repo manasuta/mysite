@@ -75,9 +75,9 @@ nav {
 }
 .nav-logo .name-en { color: var(--text); }
 .nav-logo .name-ja { color: var(--muted); font-weight: 400; font-size: 12px; margin-left: .4rem; }
-.nav-links { display: flex; gap: .25rem; list-style: none; }
+.nav-links { display: flex; gap: .35rem; list-style: none; }
 .nav-links a {
-  font-size: 13px; color: var(--text-2); padding: .4rem .75rem;
+  font-size: 20px; color: var(--text-2); padding: .5rem 1rem;
   border-radius: 8px; transition: all .25s var(--ease); position: relative;
 }
 .nav-links a:hover { color: var(--text); background: rgba(255,255,255,.04); }
