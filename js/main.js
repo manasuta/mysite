@@ -20,14 +20,18 @@
   let lang = savedLang
     || ((navigator.language || "ja").toLowerCase().startsWith("ja") ? "ja" : "en");
 
+  function localize(scope, l) {
+    l = l || lang;
+    scope.querySelectorAll("[data-en]").forEach(el => {
+      const v = el.getAttribute(l === "ja" ? "data-ja" : "data-en");
+      if (v != null) el.innerHTML = v;
+    });
+  }
   function applyLang(l) {
     lang = l;
     body.setAttribute("data-lang", l);
     root.setAttribute("lang", l);
-    $$("[data-en]").forEach(el => {
-      const v = el.getAttribute(l === "ja" ? "data-ja" : "data-en");
-      if (v != null) el.innerHTML = v;
-    });
+    localize(document, l);
     $$(".seg-btn").forEach(b => b.classList.toggle("is-on", b.dataset.lang === l));
     store.set("lang", l);
   }
@@ -125,7 +129,7 @@
   applyTheme(theme);
 
   /* ── Reveal on scroll ── */
-  const revealTargets = $$(".sec-head, .widget, .dock, .case, .proj-card, .tl-item, .now-card, .contact-card");
+  const revealTargets = $$(".sec-head, .widget, .dock, .app-list, .tl-item, .now-card, .contact-card");
   if (reduceMotion || !("IntersectionObserver" in window)) {
     revealTargets.forEach(el => el.classList.add("in"));
   } else {
@@ -164,5 +168,55 @@
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
     sections.forEach(s => so.observe(s));
+  }
+
+  /* ── Work detail sheet (App Store-style) ── */
+  const sheet = $("#sheet");
+  const sheetBody = $("#sheet-body");
+  const PROJS = ["signinja", "mangaru", "fognot", "famlog"];
+  let sheetTimer = null;
+
+  function openSheet(id) {
+    const src = document.getElementById("src-" + id);
+    if (!sheet || !sheetBody || !src) return;
+    if (sheetTimer) { clearTimeout(sheetTimer); sheetTimer = null; }
+    sheetBody.innerHTML = src.innerHTML;
+    localize(sheetBody);
+    sheet.hidden = false;
+    void sheet.offsetWidth; // reflow so the transform transition runs
+    sheet.classList.add("open");
+    sheet.setAttribute("aria-hidden", "false");
+    body.classList.add("sheet-open");
+    sheetBody.scrollTop = 0;
+    const back = sheet.querySelector(".sheet-back");
+    if (back) back.focus();
+  }
+  function closeSheet() {
+    if (!sheet || sheet.hidden) return;
+    sheet.classList.remove("open");
+    sheet.setAttribute("aria-hidden", "true");
+    body.classList.remove("sheet-open");
+    const finish = () => { sheet.hidden = true; sheetBody.innerHTML = ""; sheetTimer = null; };
+    if (reduceMotion) finish();
+    else sheetTimer = setTimeout(finish, 440);
+  }
+  function currentProj() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    return PROJS.indexOf(h) >= 0 ? h : null;
+  }
+  function syncSheet() {
+    const p = currentProj();
+    if (p) openSheet(p); else closeSheet();
+  }
+  function dismiss() {
+    if (history.length > 1) history.back();
+    else location.hash = "work";
+  }
+  if (sheet) {
+    $$(".app-row").forEach(r => r.addEventListener("click", () => { location.hash = r.dataset.proj; }));
+    $$("[data-close]", sheet).forEach(el => el.addEventListener("click", dismiss));
+    window.addEventListener("hashchange", syncSheet);
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && !sheet.hidden) dismiss(); });
+    syncSheet(); // support deep links on load
   }
 })();

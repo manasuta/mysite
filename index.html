@@ -126,7 +126,6 @@
     </div>
 
     <div class="bento">
-      <!-- Now Building — large -->
       <article class="widget w-lg w-now">
         <div class="w-head">
           <span class="w-symbol sym-now" aria-hidden="true"></span>
@@ -137,7 +136,6 @@
         <a class="w-link" href="#now" data-en="See what's next →" data-ja="現在の活動を見る →">現在の活動を見る →</a>
       </article>
 
-      <!-- Apple — medium -->
       <article class="widget w-md w-apple">
         <div class="w-head">
           <span class="w-symbol sym-apple" aria-hidden="true"></span>
@@ -150,7 +148,6 @@
         </ul>
       </article>
 
-      <!-- TOEIC ring -->
       <article class="widget w-sm w-ring">
         <svg class="ring" viewBox="0 0 72 72" aria-hidden="true">
           <circle class="ring-bg" cx="36" cy="36" r="30"></circle>
@@ -159,7 +156,6 @@
         <div class="ring-center"><span class="ring-num">705</span><span class="ring-lbl">TOEIC</span></div>
       </article>
 
-      <!-- GPA ring -->
       <article class="widget w-sm w-ring">
         <svg class="ring" viewBox="0 0 72 72" aria-hidden="true">
           <circle class="ring-bg" cx="36" cy="36" r="30"></circle>
@@ -168,13 +164,11 @@
         <div class="ring-center"><span class="ring-num">3.44</span><span class="ring-lbl">GPA</span></div>
       </article>
 
-      <!-- Awards -->
       <article class="widget w-sm w-stat">
         <span class="stat-big">🏆<span>×2</span></span>
         <span class="stat-cap" data-en="MIXI Special · Corporate" data-ja="MIXI特別賞 · 企業賞">MIXI特別賞 · 企業賞</span>
       </article>
 
-      <!-- Tech — wide -->
       <article class="widget w-wide w-tech">
         <div class="w-head">
           <span class="w-symbol sym-tech" aria-hidden="true"></span>
@@ -196,7 +190,6 @@
       </article>
     </div>
 
-    <!-- App icon dock -->
     <nav class="dock" aria-label="Sections">
       <a class="app" href="#work">
         <span class="app-icon ic-work" aria-hidden="true"></span>
@@ -218,150 +211,170 @@
   </div>
 </section>
 
-<!-- ══ WORK ══ -->
+<!-- ══ WORK (App Store list → detail sheet) ══ -->
 <section class="section" id="work">
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-eyebrow" data-en="Work" data-ja="制作物">制作物</span>
-      <h2 class="sec-title" data-en="Apps built around one belief: experience wins." data-ja="ひとつの信念でつくる — 体験が勝つ。">ひとつの信念でつくる — 体験が勝つ。</h2>
+      <h2 class="sec-title" data-en="Tap a title to open its page." data-ja="タイトルを押すと、そのページが開きます。">タイトルを押すと、そのページが開きます。</h2>
     </div>
 
-    <!-- SigNinja (flagship) -->
-    <article class="case">
-      <div class="case-copy">
-        <div class="app-store-head">
-          <img class="asi" src="assets/images/app_icon.png" alt="SigNinja app icon">
-          <div>
-            <h3 class="case-name">SigNinja</h3>
-            <p class="case-sub" data-en="Solo · Swift Student Challenge 2026" data-ja="個人開発 · Swift Student Challenge 2026 提出作">個人開発 · Swift Student Challenge 2026 提出作</p>
-          </div>
-        </div>
-        <p class="case-tag" data-en="“Lower the barrier to sign language — learn it like ninja training.”"
-           data-ja="「手話学習のハードルを下げる — 修行のように、手で覚える。」">「手話学習のハードルを下げる — 修行のように、手で覚える。」</p>
-        <p class="case-desc"
-           data-en="An iOS app that teaches Japanese Sign Language through the body. The Vision framework recognizes hand poses in real time, and the learner physically forms each sign inside a ninja-training journey."
-           data-ja="日本手話（JSL）を身体で覚えるためのiOSアプリ。Visionフレームワークが手のポーズをリアルタイムに認識し、忍者修行というメタファーの中でユーザーが実際に「印を結び」ながら学ぶ体験を設計した。">日本手話（JSL）を身体で覚えるためのiOSアプリ。Visionフレームワークが手のポーズをリアルタイムに認識し、忍者修行というメタファーの中でユーザーが実際に「印を結び」ながら学ぶ体験を設計した。</p>
-        <div class="chips">
-          <span class="chip pri">SwiftUI</span>
-          <span class="chip pri">Vision</span>
-          <span class="chip pri">CoreML</span>
-          <span class="chip">AVFoundation</span>
-        </div>
-        <p class="case-status"><span class="status-dot"></span><span data-en="In development for App Store release" data-ja="App Storeリリースに向けて開発中">App Storeリリースに向けて開発中</span></p>
-      </div>
+    <ul class="app-list" id="app-list">
+      <li>
+        <button type="button" class="app-row" data-proj="signinja">
+          <img class="row-icon" src="assets/images/app_icon.png" alt="">
+          <span class="row-main">
+            <span class="row-name">SigNinja</span>
+            <span class="row-sub" data-en="Sign-language learning · Vision" data-ja="手話学習アプリ · Vision">手話学習アプリ · Vision</span>
+          </span>
+          <span class="row-meta">
+            <span class="row-tag t-apple">SSC 2026</span>
+            <span class="chev" aria-hidden="true"></span>
+          </span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="app-row" data-proj="mangaru">
+          <span class="row-icon glyph g-mangaru" aria-hidden="true">漫</span>
+          <span class="row-main">
+            <span class="row-name">まんがる <span class="row-name-sub">Manga-ru</span></span>
+            <span class="row-sub" data-en="Pose → manga panel · Generative AI" data-ja="ポーズを漫画に · 生成AI">ポーズを漫画に · 生成AI</span>
+          </span>
+          <span class="row-meta">
+            <span class="row-tag t-award">🏆 MIXI</span>
+            <span class="chev" aria-hidden="true"></span>
+          </span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="app-row" data-proj="fognot">
+          <span class="row-icon glyph g-fognot" aria-hidden="true">✓</span>
+          <span class="row-main">
+            <span class="row-name">FogNot <span class="row-name-sub">フォグノット</span></span>
+            <span class="row-sub" data-en="Minimal task manager · SwiftUI" data-ja="ミニマル課題管理 · SwiftUI">ミニマル課題管理 · SwiftUI</span>
+          </span>
+          <span class="row-meta">
+            <span class="row-tag" data-en="Personal" data-ja="個人開発">個人開発</span>
+            <span class="chev" aria-hidden="true"></span>
+          </span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="app-row" data-proj="famlog">
+          <span class="row-icon glyph g-famlog" aria-hidden="true">家</span>
+          <span class="row-main">
+            <span class="row-name">FamLog</span>
+            <span class="row-sub" data-en="Family communication · React Native" data-ja="家族コミュニケーション · React Native">家族コミュニケーション · React Native</span>
+          </span>
+          <span class="row-meta">
+            <span class="row-tag t-award">🏆 <span data-en="Corporate" data-ja="企業賞">企業賞</span></span>
+            <span class="chev" aria-hidden="true"></span>
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
 
-      <div class="case-shots shots-3">
-        <figure class="phone">
-          <span class="notch" aria-hidden="true"></span>
-          <img src="assets/images/sign.png" alt="SigNinja — hand-sign detection screen" loading="lazy">
-        </figure>
-        <figure class="phone phone-alt">
-          <span class="notch" aria-hidden="true"></span>
-          <img src="assets/images/start.png" alt="SigNinja — onboarding screen" loading="lazy">
-        </figure>
-        <figure class="phone phone-alt">
-          <span class="notch" aria-hidden="true"></span>
-          <img src="assets/images/collections.png" alt="SigNinja — sign collection screen" loading="lazy">
-        </figure>
+  <!-- ── Hidden detail sources (cloned into the sheet on tap) ── -->
+  <div class="proj-src" id="src-signinja" hidden>
+    <div class="detail-head">
+      <img class="detail-icon" src="assets/images/app_icon.png" alt="SigNinja app icon">
+      <div class="detail-headtext">
+        <h3 class="detail-name">SigNinja</h3>
+        <p class="detail-sub" data-en="Solo · Swift Student Challenge 2026" data-ja="個人開発 · Swift Student Challenge 2026 提出作">個人開発 · Swift Student Challenge 2026 提出作</p>
+        <div class="chips"><span class="chip pri">SwiftUI</span><span class="chip pri">Vision</span><span class="chip pri">CoreML</span><span class="chip">AVFoundation</span></div>
       </div>
-    </article>
+    </div>
+    <p class="detail-tag" data-en="“Lower the barrier to sign language — learn it like ninja training.”"
+       data-ja="「手話学習のハードルを下げる — 修行のように、手で覚える。」">「手話学習のハードルを下げる — 修行のように、手で覚える。」</p>
+    <div class="shots">
+      <figure class="phone"><span class="notch" aria-hidden="true"></span><img src="assets/images/sign.png" alt="SigNinja — hand-sign detection" loading="lazy"></figure>
+      <figure class="phone"><span class="notch" aria-hidden="true"></span><img src="assets/images/start.png" alt="SigNinja — onboarding" loading="lazy"></figure>
+      <figure class="phone"><span class="notch" aria-hidden="true"></span><img src="assets/images/collections.png" alt="SigNinja — sign collection" loading="lazy"></figure>
+    </div>
+    <p class="detail-desc"
+       data-en="An iOS app that teaches Japanese Sign Language through the body. The Vision framework recognizes hand poses in real time, and the learner physically forms each sign inside a ninja-training journey."
+       data-ja="日本手話（JSL）を身体で覚えるためのiOSアプリ。Visionフレームワークが手のポーズをリアルタイムに認識し、忍者修行というメタファーの中でユーザーが実際に「印を結び」ながら学ぶ体験を設計した。">日本手話（JSL）を身体で覚えるためのiOSアプリ。Visionフレームワークが手のポーズをリアルタイムに認識し、忍者修行というメタファーの中でユーザーが実際に「印を結び」ながら学ぶ体験を設計した。</p>
+    <p class="detail-status"><span class="status-dot"></span><span data-en="In development for App Store release" data-ja="App Storeリリースに向けて開発中">App Storeリリースに向けて開発中</span></p>
+  </div>
 
-    <!-- まんがる -->
-    <article class="case case-reverse">
-      <div class="case-copy">
-        <div class="app-store-head no-icon">
-          <div>
-            <h3 class="case-name">まんがる <span class="case-name-sub">Manga-ru</span></h3>
-            <p class="case-sub" data-en="PM · Team Lead · try! Swift 2026 (International Team)" data-ja="PM・チームリーダー · try! Swift 2026 学生ハッカソン（国際チーム）">PM・チームリーダー · try! Swift 2026 学生ハッカソン（国際チーム）</p>
-          </div>
-          <span class="case-award">🏆 MIXI 特別賞</span>
-        </div>
-        <p class="case-tag" data-en="“Turn an everyday moment into shared laughter.”"
-           data-ja="「日常の何気ない瞬間を、みんなで笑える場面に変える。」">「日常の何気ない瞬間を、みんなで笑える場面に変える。」</p>
-        <p class="case-desc"
-           data-en="An iOS app that turns a friend's pose into a manga panel with generative AI. Vision crops the subject, the app composites a manga background, and AI writes the perfect absurd speech bubble — in seconds."
-           data-ja="iPhoneで撮った友人のポーズを、生成AIが漫画のワンシーンに変えるiOSアプリ。Visionで人物を切り抜き、漫画風の背景を合成し、ポーズに合った絶妙なセリフをAIが生成。その場で笑い合える体験を数秒で。">iPhoneで撮った友人のポーズを、生成AIが漫画のワンシーンに変えるiOSアプリ。Visionで人物を切り抜き、漫画風の背景を合成し、ポーズに合った絶妙なセリフをAIが生成。その場で笑い合える体験を数秒で。</p>
-        <div class="chips">
-          <span class="chip pri">SwiftUI</span>
-          <span class="chip pri">Vision</span>
-          <span class="chip pri">OpenAI API</span>
-          <span class="chip">CoreImage</span>
-        </div>
-        <div class="insight">
-          <span class="insight-lbl" data-en="PM Decision" data-ja="PMの意思決定">PMの意思決定</span>
-          <p data-en="Mid-hackathon, the team was stuck on complex AR. I made the call: <b>users don't want cutting-edge AR — they want to laugh.</b> We pivoted to 2D compositing: lower risk, far higher UX payoff. That decision won the MIXI Special Award."
-             data-ja="開発中盤、チームは高度なAR実装で難航していた。私は判断した。「<b>ユーザーが求めているのは最先端のARではなく、笑いだ。</b>」ARを捨て、リスクの低い2D合成へピボット。体験を最優先したこの決断が、MIXI特別賞に直結した。">開発中盤、チームは高度なAR実装で難航していた。私は判断した。「<b>ユーザーが求めているのは最先端のARではなく、笑いだ。</b>」ARを捨て、リスクの低い2D合成へピボット。体験を最優先したこの決断が、MIXI特別賞に直結した。</p>
-        </div>
+  <div class="proj-src" id="src-mangaru" hidden>
+    <div class="detail-head no-icon">
+      <div class="detail-headtext">
+        <h3 class="detail-name">まんがる <span class="detail-name-sub">Manga-ru</span></h3>
+        <p class="detail-sub" data-en="PM · Team Lead · try! Swift 2026 (International Team)" data-ja="PM・チームリーダー · try! Swift 2026 学生ハッカソン（国際チーム）">PM・チームリーダー · try! Swift 2026 学生ハッカソン（国際チーム）</p>
+        <div class="chips"><span class="chip pri">SwiftUI</span><span class="chip pri">Vision</span><span class="chip pri">OpenAI API</span><span class="chip">CoreImage</span></div>
       </div>
-      <div class="case-shots shots-1">
-        <figure class="phone">
-          <span class="notch" aria-hidden="true"></span>
-          <img src="assets/images/mangaru.jpg" alt="まんがる — generated manga panel" loading="lazy">
-        </figure>
-      </div>
-    </article>
+      <span class="case-award">🏆 MIXI 特別賞</span>
+    </div>
+    <p class="detail-tag" data-en="“Turn an everyday moment into shared laughter.”"
+       data-ja="「日常の何気ない瞬間を、みんなで笑える場面に変える。」">「日常の何気ない瞬間を、みんなで笑える場面に変える。」</p>
+    <div class="shots">
+      <figure class="phone"><span class="notch" aria-hidden="true"></span><img src="assets/images/mangaru.jpg" alt="まんがる — generated manga panel" loading="lazy"></figure>
+    </div>
+    <p class="detail-desc"
+       data-en="An iOS app that turns a friend's pose into a manga panel with generative AI. Vision crops the subject, the app composites a manga background, and AI writes the perfect absurd speech bubble — in seconds."
+       data-ja="iPhoneで撮った友人のポーズを、生成AIが漫画のワンシーンに変えるiOSアプリ。Visionで人物を切り抜き、漫画風の背景を合成し、ポーズに合った絶妙なセリフをAIが生成。その場で笑い合える体験を数秒で。">iPhoneで撮った友人のポーズを、生成AIが漫画のワンシーンに変えるiOSアプリ。Visionで人物を切り抜き、漫画風の背景を合成し、ポーズに合った絶妙なセリフをAIが生成。その場で笑い合える体験を数秒で。</p>
+    <div class="insight">
+      <span class="insight-lbl" data-en="PM Decision" data-ja="PMの意思決定">PMの意思決定</span>
+      <p data-en="Mid-hackathon, the team was stuck on complex AR. I made the call: <b>users don't want cutting-edge AR — they want to laugh.</b> We pivoted to 2D compositing: lower risk, far higher UX payoff. That decision won the MIXI Special Award."
+         data-ja="開発中盤、チームは高度なAR実装で難航していた。私は判断した。「<b>ユーザーが求めているのは最先端のARではなく、笑いだ。</b>」ARを捨て、リスクの低い2D合成へピボット。体験を最優先したこの決断が、MIXI特別賞に直結した。">開発中盤、チームは高度なAR実装で難航していた。私は判断した。「<b>ユーザーが求めているのは最先端のARではなく、笑いだ。</b>」ARを捨て、リスクの低い2D合成へピボット。体験を最優先したこの決断が、MIXI特別賞に直結した。</p>
+    </div>
+  </div>
 
-    <!-- FogNot -->
-    <article class="case">
-      <div class="case-copy">
-        <div class="app-store-head no-icon">
-          <div>
-            <h3 class="case-name">FogNot <span class="case-name-sub">フォグノット</span></h3>
-            <p class="case-sub" data-en="Solo · Design + iOS Development · Personal Project" data-ja="ソロ · デザイン + iOS開発 · 個人開発">ソロ · デザイン + iOS開発 · 個人開発</p>
-          </div>
-        </div>
-        <p class="case-tag" data-en="forget × fog × not — “Clear the fog of assignments.”"
-           data-ja="forget × fog × not — 「課題の霧を晴らす。」">forget × fog × not — 「課題の霧を晴らす。」</p>
-        <p class="case-desc"
-           data-en="A monochrome, minimal task manager for students drowning in assignments. Title + deadline — that's it. Firebase Auth for shared lists, EventKit auto-sync to the iOS Calendar, and a WidgetKit Home Screen widget for the next deadlines."
-           data-ja="課題に追われる大学生のための、白・黒・グレーで設計したミニマルな課題管理アプリ。タイトルと期限を入れるだけ。Firebase Authによる共同編集、EventKitでiOS標準カレンダーへ自動同期、WidgetKitで直近の締切をホーム画面に常駐させる。">課題に追われる大学生のための、白・黒・グレーで設計したミニマルな課題管理アプリ。タイトルと期限を入れるだけ。Firebase Authによる共同編集、EventKitでiOS標準カレンダーへ自動同期、WidgetKitで直近の締切をホーム画面に常駐させる。</p>
-        <div class="chips">
-          <span class="chip pri">SwiftUI</span>
-          <span class="chip pri">Firebase</span>
-          <span class="chip pri">EventKit</span>
-          <span class="chip pri">WidgetKit</span>
-          <span class="chip">App Groups</span>
-        </div>
-        <ul class="feat">
-          <li><b data-en="Frictionless capture" data-ja="サクッと追加">サクッと追加</b><span data-en="Two fields, no friction — for the exact moment a deadline is announced." data-ja="タイトルと期限の2項目だけ。発表された瞬間に迷わず追加できる。">タイトルと期限の2項目だけ。発表された瞬間に迷わず追加できる。</span></li>
-          <li><b data-en="Calendar auto-sync" data-ja="カレンダー自動連携">カレンダー自動連携</b><span data-en="EventKit writes every task into the system calendar." data-ja="EventKitで標準カレンダーに自動書き込み。">EventKitで標準カレンダーに自動書き込み。</span></li>
-          <li><b data-en="Home Screen Widget" data-ja="ホーム画面ウィジェット">ホーム画面ウィジェット</b><span data-en="The next deadlines, always on the Home Screen." data-ja="直近の締切をホーム画面に常駐。">直近の締切をホーム画面に常駐。</span></li>
-        </ul>
+  <div class="proj-src" id="src-fognot" hidden>
+    <div class="detail-head no-icon">
+      <div class="detail-headtext">
+        <h3 class="detail-name">FogNot <span class="detail-name-sub">フォグノット</span></h3>
+        <p class="detail-sub" data-en="Solo · Design + iOS Development · Personal Project" data-ja="ソロ · デザイン + iOS開発 · 個人開発">ソロ · デザイン + iOS開発 · 個人開発</p>
+        <div class="chips"><span class="chip pri">SwiftUI</span><span class="chip pri">Firebase</span><span class="chip pri">EventKit</span><span class="chip pri">WidgetKit</span><span class="chip">App Groups</span></div>
       </div>
-      <div class="case-shots shots-2">
-        <figure class="phone">
-          <span class="notch" aria-hidden="true"></span>
-          <img src="assets/images/fn-home.png" alt="FogNot — home screen" loading="lazy">
-        </figure>
-        <figure class="phone phone-alt">
-          <span class="notch" aria-hidden="true"></span>
-          <img src="assets/images/fn-calendar.png" alt="FogNot — calendar view" loading="lazy">
-        </figure>
-      </div>
-    </article>
+    </div>
+    <p class="detail-tag" data-en="forget × fog × not — “Clear the fog of assignments.”"
+       data-ja="forget × fog × not — 「課題の霧を晴らす。」">forget × fog × not — 「課題の霧を晴らす。」</p>
+    <div class="shots">
+      <figure class="phone"><span class="notch" aria-hidden="true"></span><img src="assets/images/fn-home.png" alt="FogNot — home" loading="lazy"></figure>
+      <figure class="phone"><span class="notch" aria-hidden="true"></span><img src="assets/images/fn-calendar.png" alt="FogNot — calendar" loading="lazy"></figure>
+    </div>
+    <p class="detail-desc"
+       data-en="A monochrome, minimal task manager for students drowning in assignments. Title + deadline — that's it. Firebase Auth for shared lists, EventKit auto-sync to the iOS Calendar, and a WidgetKit Home Screen widget for the next deadlines."
+       data-ja="課題に追われる大学生のための、白・黒・グレーで設計したミニマルな課題管理アプリ。タイトルと期限を入れるだけ。Firebase Authによる共同編集、EventKitでiOS標準カレンダーへ自動同期、WidgetKitで直近の締切をホーム画面に常駐させる。">課題に追われる大学生のための、白・黒・グレーで設計したミニマルな課題管理アプリ。タイトルと期限を入れるだけ。Firebase Authによる共同編集、EventKitでiOS標準カレンダーへ自動同期、WidgetKitで直近の締切をホーム画面に常駐させる。</p>
+    <ul class="feat">
+      <li><b data-en="Frictionless capture" data-ja="サクッと追加">サクッと追加</b><span data-en="Two fields, no friction — for the exact moment a deadline is announced." data-ja="タイトルと期限の2項目だけ。発表された瞬間に迷わず追加できる。">タイトルと期限の2項目だけ。発表された瞬間に迷わず追加できる。</span></li>
+      <li><b data-en="Calendar auto-sync" data-ja="カレンダー自動連携">カレンダー自動連携</b><span data-en="EventKit writes every task into the system calendar." data-ja="EventKitで標準カレンダーに自動書き込み。">EventKitで標準カレンダーに自動書き込み。</span></li>
+      <li><b data-en="Home Screen Widget" data-ja="ホーム画面ウィジェット">ホーム画面ウィジェット</b><span data-en="The next deadlines, always on the Home Screen." data-ja="直近の締切をホーム画面に常駐。">直近の締切をホーム画面に常駐。</span></li>
+    </ul>
+  </div>
 
-    <!-- Other -->
-    <div class="proj-more">
-      <article class="proj-card">
-        <div class="proj-top">
-          <div>
-            <span class="proj-name">FamLog</span>
-            <span class="proj-event" data-en="Kansai Beginners Hackathon Vol.7" data-ja="関西ビギナーズハッカソン Vol.7">関西ビギナーズハッカソン Vol.7</span>
-          </div>
-          <span class="tl-badge b-award">🏆 <span data-en="Corporate Award" data-ja="企業賞">企業賞</span></span>
-        </div>
-        <p class="proj-desc"
-           data-en="A family app that surfaces children's daily wins. Kids post “I did it” moments with AI-suggested captions; parents cheer with likes; a weekly AI recap sparks dinner-table talk."
-           data-ja="子供の日々の「できた！」を家族で見える化するアプリ。投稿にAIが説明文を提案し、保護者がいいねで応援。AIの週次まとめが食卓の会話を生む。">子供の日々の「できた！」を家族で見える化するアプリ。投稿にAIが説明文を提案し、保護者がいいねで応援。AIの週次まとめが食卓の会話を生む。</p>
-        <div class="proj-bot">
-          <div class="chips">
-            <span class="chip">React Native</span>
-            <span class="chip">Expo</span>
-            <span class="chip">AI</span>
-          </div>
-          <a class="proj-link" href="https://github.com/uchiyama886/KBH2025_TEAM05" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-      </article>
+  <div class="proj-src" id="src-famlog" hidden>
+    <div class="detail-head no-icon">
+      <div class="detail-headtext">
+        <h3 class="detail-name">FamLog</h3>
+        <p class="detail-sub" data-en="Team · Kansai Beginners Hackathon Vol.7" data-ja="チーム開発 · 関西ビギナーズハッカソン Vol.7">チーム開発 · 関西ビギナーズハッカソン Vol.7</p>
+        <div class="chips"><span class="chip pri">React Native</span><span class="chip">Expo</span><span class="chip">AI</span></div>
+      </div>
+      <span class="case-award">🏆 <span data-en="Corporate Award" data-ja="企業賞">企業賞</span></span>
+    </div>
+    <p class="detail-tag" data-en="“Turn a child's small win into the family's conversation.”"
+       data-ja="「子供の小さな『できた！』を、家族の会話に変える。」">「子供の小さな『できた！』を、家族の会話に変える。」</p>
+    <p class="detail-desc"
+       data-en="A family app that surfaces children's daily wins. Kids post “I did it” moments with AI-suggested captions; parents cheer with likes; a weekly AI recap sparks dinner-table talk. Built with a team of five strangers just 3 months into coding — and won a Corporate Award."
+       data-ja="子供の日々の「できた！」を家族で見える化するアプリ。投稿にAIが説明文を提案し、保護者がいいねで応援。AIの週次まとめが食卓の会話を生む。学習3ヶ月・初対面5人チームで開発し、企業賞を受賞した。">子供の日々の「できた！」を家族で見える化するアプリ。投稿にAIが説明文を提案し、保護者がいいねで応援。AIの週次まとめが食卓の会話を生む。学習3ヶ月・初対面5人チームで開発し、企業賞を受賞した。</p>
+    <p class="detail-links"><a href="https://github.com/uchiyama886/KBH2025_TEAM05" target="_blank" rel="noopener">GitHub →</a></p>
+  </div>
+
+  <!-- ── Detail sheet ── -->
+  <div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-label="Project detail">
+    <div class="sheet-scrim" data-close></div>
+    <div class="sheet-panel">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <header class="sheet-bar">
+        <button type="button" class="sheet-back" data-close>
+          <span class="back-chev" aria-hidden="true"></span>
+          <span data-en="Work" data-ja="制作物">制作物</span>
+        </button>
+      </header>
+      <div class="sheet-body" id="sheet-body"></div>
     </div>
   </div>
 </section>
