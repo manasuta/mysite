@@ -366,6 +366,8 @@ body.sheet-open { overflow: hidden; }
 /* ══ NOW ══ */
 .now-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
 .now-card { background: var(--card); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 1.6rem; box-shadow: var(--shadow); }
+.now-logo { display: inline-flex; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: .55rem .9rem; margin-bottom: 1rem; }
+.now-logo img { height: 30px; width: auto; display: block; }
 .now-status { display: inline-flex; align-items: center; gap: .45rem; font-size: 12px; font-weight: 600; padding: .3rem .65rem; border-radius: var(--pill); margin-bottom: .9rem; }
 .now-status.s-active   { color: var(--good); background: var(--good-bg); }
 .now-status.s-building { color: var(--warn); background: var(--warn-bg); }

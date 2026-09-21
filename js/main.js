@@ -89,7 +89,8 @@
       const st = statusText[n.status] || statusText.active;
       const card = document.createElement("article");
       card.className = "now-card";
-      card.innerHTML =
+      const logo = n.logo ? `<div class="now-logo"><img src="${n.logo}" alt="CYPR logo"></div>` : "";
+      card.innerHTML = logo +
         `<span class="now-status s-${n.status}"><span class="nd"></span><span data-en="${st.en}" data-ja="${st.ja}">${st.ja}</span></span>` +
         `<h3 class="now-title" data-en="${esc(n.title.en)}" data-ja="${esc(n.title.ja)}">${n.title.ja}</h3>` +
         `<p class="now-body" data-en="${esc(n.body.en)}" data-ja="${esc(n.body.ja)}">${n.body.ja}</p>`;

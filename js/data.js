@@ -75,6 +75,7 @@ const PORTFOLIO_DATA = {
   now: [
     {
       status: "active",
+      logo: "assets/images/cypr_logo.png",
       title: { ja: "CYPR — 近大発 iOSチーム 設立", en: "CYPR — Founding an iOS Team at Kindai" },
       body:  { ja: "近大発のiOS開発チームを設立。今は基盤づくりの段階で、メンバーがゲリラLTで知識を共有し合っている。目標は、全員の強みを合わせて1本のアプリをリリースすること。", en: "Founded an iOS team at Kindai. Building our foundation now — members share knowledge through guerrilla lightning talks. The goal: combine everyone's strengths to ship one app." }
     },
