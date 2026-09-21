@@ -57,31 +57,6 @@
     applyTheme(themeOrder[(themeOrder.indexOf(theme) + 1) % themeOrder.length]);
   });
 
-  /* ── Live lock-screen clock ── */
-  const lockTime = $("#lock-time");
-  function tick() {
-    if (!lockTime) return;
-    const now = new Date();
-    lockTime.textContent = now.getHours() + ":" + String(now.getMinutes()).padStart(2, "0");
-  }
-  tick(); setInterval(tick, 15000);
-
-  /* ── Marquee ── */
-  const mqData = [
-    { ja: "MIXI 特別賞 · try! Swift 2026", en: "MIXI Special Award · try! Swift 2026", dot: "gold" },
-    { ja: "Apple on Campus · 近畿大学スタッフ", en: "Apple on Campus · Kindai Staff", dot: "" },
-    { ja: "フェンリル iOSインターン 修了", en: "Fenrir iOS Internship · Completed", dot: "purple" },
-    { ja: "特待生認定 · 1年平均90点以上", en: "Honor Student · 90+ average", dot: "gold" },
-    { ja: "Swift Student Challenge 2026 提出", en: "Swift Student Challenge 2026", dot: "" }
-  ];
-  const mqTrack = $("#marquee-track");
-  if (mqTrack) {
-    const build = () => mqData.map(d =>
-      `<span class="mq-item"><span class="mq-dot ${d.dot}"></span><span data-en="${d.en}" data-ja="${d.ja}">${d.ja}</span></span><span class="mq-sep">→</span>`
-    ).join("");
-    mqTrack.innerHTML = build() + build();
-  }
-
   /* ── Timeline ── */
   const tl = $("#timeline");
   if (tl) {
@@ -129,7 +104,8 @@
   applyTheme(theme);
 
   /* ── Reveal on scroll ── */
-  const revealTargets = $$(".sec-head, .widget, .dock, .app-list, .tl-item, .now-card, .contact-card");
+  $$(".bento .widget").forEach((w, i) => w.style.setProperty("--i", i));
+  const revealTargets = $$(".sec-head, .widget, .app-list, .tl-item, .now-card, .contact-card");
   if (reduceMotion || !("IntersectionObserver" in window)) {
     revealTargets.forEach(el => el.classList.add("in"));
   } else {
