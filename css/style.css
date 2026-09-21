@@ -333,6 +333,14 @@ button { font-family: inherit; color: inherit; cursor: pointer; }
 .insight-lbl { display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent); margin-bottom: .4rem; }
 .insight p { font-size: 15px; color: var(--text); line-height: 1.6; }
 .insight b { font-weight: 700; }
+.detail-block { margin-top: 1.5rem; }
+.detail-block-lbl { display: block; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: .55rem; }
+.detail-block > p { font-size: 15px; color: var(--text-2); line-height: 1.65; }
+.detail-points { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+.detail-points li { position: relative; padding-left: 1.1rem; font-size: 15px; color: var(--text-2); line-height: 1.6; }
+.detail-points li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.detail-points b { color: var(--text); font-weight: 600; }
+
 .feat { list-style: none; display: flex; flex-direction: column; gap: .7rem; margin-top: .3rem; }
 .feat li { display: flex; flex-direction: column; }
 .feat b { font-size: 15px; font-weight: 600; }
