@@ -1,7 +1,7 @@
 // js/main.js — behavior layer
 (function () {
   "use strict";
-  const D = window.PORTFOLIO_DATA || { timeline: [], now: [] };
+  const D = (typeof PORTFOLIO_DATA !== "undefined") ? PORTFOLIO_DATA : { timeline: [], now: [] };
   const root = document.documentElement;
   const body = document.body;
   const $  = (s, c = document) => c.querySelector(s);
