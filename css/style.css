@@ -400,11 +400,32 @@ body.sheet-open { overflow: hidden; }
   .now-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .bento { grid-template-columns: repeat(2, 1fr); }
+  .wrap { padding-inline: 16px; }
+  .bento { grid-template-columns: repeat(2, 1fr); gap: .8rem; }
   .w-lg, .w-md { grid-column: span 2; grid-row: auto; }
   .w-wide { grid-column: span 2; }
+  .widget { padding: 1.1rem; }
   .complications { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { flex-direction: column; }
+
+  /* Work rows: keep tidy on small phones */
+  .app-row { gap: .75rem; padding: .9rem 1rem; }
+  .row-icon { width: 48px; height: 48px; }
+  .row-name { font-size: 16px; }
+  .row-sub { font-size: 12px; }
+
+  /* Detail sheet: single phone fills the width */
+  .shots { gap: .6rem; }
+  .phone { width: min(72vw, 220px); }
+}
+
+@media (max-width: 380px) {
+  .nav { padding-inline: 12px; gap: .5rem; }
+  .nav-avatar { width: 26px; height: 26px; }
+  .seg-btn { padding: .25rem .4rem; }
+  .row-meta { gap: .4rem; }
+  .row-tag { font-size: 11px; padding: .22rem .5rem; }
+  .hero-story { max-width: 100%; }
 }
 
 /* ══ MOTION / TRANSPARENCY prefs ══ */
