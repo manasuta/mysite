@@ -39,9 +39,9 @@
 
   /* ── Theme: auto → light → dark ── */
   const themeBtn = $("#theme-btn");
-  const themeOrder = ["auto", "light", "dark"];
+  const themeOrder = ["light", "dark", "auto"];
   const themeLabel = { auto: "自動 (システム連動)", light: "ライト", dark: "ダーク" };
-  let theme = store.get("theme") || "auto";
+  let theme = store.get("theme") || "light";
 
   function applyTheme(t) {
     theme = t;

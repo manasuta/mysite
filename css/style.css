@@ -394,9 +394,9 @@ body.sheet-open { overflow: hidden; }
 /* ══ RESPONSIVE ══ */
 @media (max-width: 860px) {
   .nav-links { position: fixed; inset: 0 0 auto 0; top: 0; flex-direction: column; gap: .2rem;
-    padding: calc(60px + env(safe-area-inset-top,0px)) 22px 20px; background: var(--nav-bg);
-    -webkit-backdrop-filter: saturate(180%) blur(22px); backdrop-filter: saturate(180%) blur(22px);
-    border-bottom: 1px solid var(--line-soft); transform: translateY(-102%); transition: transform .3s var(--ease); }
+    padding: calc(60px + env(safe-area-inset-top,0px)) 22px 20px; background: var(--bg);
+    border-bottom: 1px solid var(--line); box-shadow: 0 12px 30px rgba(0,0,0,.14);
+    transform: translateY(-102%); transition: transform .3s var(--ease); }
   .nav-links.open { transform: translateY(0); }
   .nav-links a { font-size: 16px; padding: .7rem .9rem; }
   .nav-burger { display: inline-flex; }
