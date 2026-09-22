@@ -242,7 +242,6 @@ button { font-family: inherit; color: inherit; cursor: pointer; }
 .w-head { display: flex; align-items: center; gap: .55rem; margin-bottom: .8rem; }
 .w-kicker { font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--muted); }
 .w-symbol { width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0; background-size: 17px 17px; background-position: center; background-repeat: no-repeat; }
-.sym-now   { background-color: var(--warn);   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M13 2 4 14h7l-1 8 9-12h-7z'/></svg>"); }
 .sym-apple { background-color: var(--accent); background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M12 3v6M12 15l4 6M12 15l-4 6'/></svg>"); }
 .sym-tech  { background-color: var(--purple); background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M8 6 3 12l5 6M16 6l5 6-5 6'/></svg>"); }
 .w-logo { display: inline-flex; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: .3rem .5rem; }
@@ -281,10 +280,6 @@ button { font-family: inherit; color: inherit; cursor: pointer; }
 .app-row:hover { background: var(--fill); }
 .app-row:active { background: var(--accent-soft); }
 .row-icon { width: 56px; height: 56px; border-radius: 24%; flex-shrink: 0; object-fit: cover; box-shadow: var(--shadow); }
-.row-icon.glyph { display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 23px; }
-.g-mangaru { background: linear-gradient(160deg, #FF6B6B, #E0245E); }
-.g-fognot  { background: linear-gradient(160deg, #48484A, #0E0E10); }
-.g-famlog  { background: linear-gradient(160deg, #FFB43B, #E07A00); }
 .row-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .12rem; }
 .row-name { font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
 .row-name-sub { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--muted); margin-left: .35rem; }
